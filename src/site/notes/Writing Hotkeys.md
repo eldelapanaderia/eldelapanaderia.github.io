@@ -10,7 +10,7 @@ test
 
 <div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr></tbody></table></div>
 
-```dataviewjs
+```
 // --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
 // CLASES CSS: Define las clases para el posicionamiento (wiki-sidebar) y el estilo (callout-info).
 // Necesitarás definir 'wiki-sidebar' en tu CSS/SASS para el 'float: right' y el ancho.
