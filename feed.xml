@@ -3,14 +3,14 @@
     <title>Firmamento</title>
     <link href="https://eldelapanaderia.github.io/feed.xml" rel="self" />
     <link href="https://eldelapanaderia.github.io" />
-    <updated>2025-11-14T20:58:43Z</updated>
+    <updated>2025-11-14T20:59:34Z</updated>
     <id>https://eldelapanaderia.github.io</id>
         <entry>
             <title>
                 Writing Hotkeys
                 
             </title>
-            <updated>2025-11-14T20:58:29Z</updated>
+            <updated>2025-11-14T20:59:21Z</updated>
             <id>https://eldelapanaderia.github.io/W/</id>
             <content type="html">
                 &lt;p&gt;Em dash  — (diálogos)  &lt;code&gt;Alt + -&lt;/code&gt;  (&lt;code&gt;Alt + 0151&lt;/code&gt;)  &lt;code&gt;--&lt;/code&gt;→&lt;code&gt;—&lt;/code&gt;&lt;br /&gt;
@@ -19,7 +19,7 @@ Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro d
 Tambien plugin smart typography que sustituye al escribir&lt;br /&gt;
 test&lt;/p&gt;
 &lt;div class=&quot;dataview table-view&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Dg-publish&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-permalink&lt;/td&gt;&lt;td&gt;/W&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
-&lt;pre&gt;&lt;code class=&quot;language-dataviewjs&quot;&gt;// --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
+&lt;pre&gt;&lt;code&gt;// --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
 // CLASES CSS: Define las clases para el posicionamiento (wiki-sidebar) y el estilo (callout-info).
 // Necesitarás definir &#39;wiki-sidebar&#39; en tu CSS/SASS para el &#39;float: right&#39; y el ancho.
 const customClasses = &amp;quot;wiki-sidebar callout-info&amp;quot;; 
@@ -81,7 +81,7 @@ dv.container.appendChild(sidebarContainer);&lt;/code&gt;&lt;/pre&gt;
                 Help
                 
             </title>
-            <updated>2025-11-14T20:58:29Z</updated>
+            <updated>2025-11-14T20:59:21Z</updated>
             <id>https://eldelapanaderia.github.io/</id>
             <content type="html">
                 &lt;blockquote&gt;
