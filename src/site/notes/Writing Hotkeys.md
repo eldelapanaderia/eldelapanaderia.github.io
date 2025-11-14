@@ -8,22 +8,6 @@ Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro d
 Tambien plugin smart typography que sustituye al escribir
 test
 
-> [!NOTE] Title
-> Contents
-> 
-> <pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'
-    at DataviewInlineApi.eval (plugin:dataview:19027:21)
-    at evalInContext (plugin:dataview:19028:7)
-    at asyncEvalInContext (plugin:dataview:19038:32)
-    at DataviewJSRenderer.render (plugin:dataview:19064:19)
-    at DataviewJSRenderer.onload (plugin:dataview:18606:14)
-    at DataviewJSRenderer.load (app://obsidian.md/app.js:1:689336)
-    at DataviewApi.executeJs (plugin:dataview:19607:18)
-    at DataviewCompiler.eval (plugin:digitalgarden:10763:23)
-    at Generator.next (&lt;anonymous&gt;)
-    at eval (plugin:digitalgarden:90:61)</pre>
-
-
 <div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr></tbody></table></div>
 
 ```dataviewjs
