@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://[your username].github.io">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://eldelapanaderia.github.io">
     <title>Firmamento</title>
-    <link href="https://[your username].github.io/feed.xml" rel="self" />
-    <link href="https://[your username].github.io" />
-    <updated>2025-11-14T20:55:50Z</updated>
-    <id>https://[your username].github.io</id>
+    <link href="https://eldelapanaderia.github.io/feed.xml" rel="self" />
+    <link href="https://eldelapanaderia.github.io" />
+    <updated>2025-11-14T20:56:11Z</updated>
+    <id>https://eldelapanaderia.github.io</id>
 </feed>
