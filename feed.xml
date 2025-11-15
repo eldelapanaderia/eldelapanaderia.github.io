@@ -3,14 +3,14 @@
     <title>Firmamento</title>
     <link href="https://eldelapanaderia.github.io/feed.xml" rel="self" />
     <link href="https://eldelapanaderia.github.io" />
-    <updated>2025-11-14T21:48:54Z</updated>
+    <updated>2025-11-15T00:08:51Z</updated>
     <id>https://eldelapanaderia.github.io</id>
         <entry>
             <title>
                 Writing Hotkeys
                 
             </title>
-            <updated>2025-11-14T21:48:41Z</updated>
+            <updated>2025-11-15T00:08:37Z</updated>
             <id>https://eldelapanaderia.github.io/W/</id>
             <content type="html">
                 &lt;p&gt;Em dash  — (diálogos)  &lt;code&gt;Alt + -&lt;/code&gt;  (&lt;code&gt;Alt + 0151&lt;/code&gt;)  &lt;code&gt;--&lt;/code&gt;→&lt;code&gt;—&lt;/code&gt;&lt;br /&gt;
@@ -19,59 +19,51 @@ Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro d
 Tambien plugin smart typography que sustituye al escribir&lt;br /&gt;
 test&lt;/p&gt;
 &lt;div class=&quot;dataview table-view&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Dg-publish&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-permalink&lt;/td&gt;&lt;td&gt;/W&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
-&lt;pre&gt;&lt;code&gt;// --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
+# H1
+## H2
+### H3
+#### H4
+```
+// --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
 // CLASES CSS: Define las clases para el posicionamiento (wiki-sidebar) y el estilo (callout-info).
 // Necesitarás definir &#39;wiki-sidebar&#39; en tu CSS/SASS para el &#39;float: right&#39; y el ancho.
-const customClasses = &amp;quot;wiki-sidebar callout-info&amp;quot;; 
+const customClasses = &quot;wiki-sidebar callout-info&quot;; 
 // ---------------------------------------------
-
-const page = dv.current();
-const headerText = page.file.name;
-const ignoredKeys = [
-    &amp;quot;file&amp;quot;, &amp;quot;aliases&amp;quot;, &amp;quot;cssclass&amp;quot;, &amp;quot;tag&amp;quot;, &amp;quot;tags&amp;quot;, &amp;quot;outlinks&amp;quot;, 
-    &amp;quot;inlinks&amp;quot;, &amp;quot;etags&amp;quot;, &amp;quot;path&amp;quot;, &amp;quot;position&amp;quot;, &amp;quot;url&amp;quot;, 
-    &amp;quot;permalink&amp;quot;, &amp;quot;layout&amp;quot;, &amp;quot;eleventyComputed&amp;quot;, &amp;quot;settings&amp;quot; // Añadidos campos comunes de Eleventy
-];
-
-// 1. Creamos el contenedor DIV principal con las clases de estilo y posicionamiento
-const sidebarContainer = dv.el(&amp;quot;div&amp;quot;, &amp;quot;&amp;quot;, { cls: customClasses });
-
-let htmlContent = &#39;&#39;;
-
-// 2. Generación del encabezado (Header)
-htmlContent += `&amp;lt;div class=&amp;quot;sidebar-header&amp;quot;&amp;gt;${headerText}&amp;lt;/div&amp;gt;`;
-
-// 3. Inicio de la tabla de metadatos (transpuesta)
-htmlContent += &#39;&amp;lt;table&amp;gt;&amp;lt;tbody&amp;gt;&#39;;
-
-const frontmatterKeys = Object.keys(page)
-    .filter(key =&amp;gt; !ignoredKeys.includes(key) &amp;amp;&amp;amp; typeof page[key] !== &#39;object&#39;);
-
-for (const key of frontmatterKeys) {
-    let value = page[key];
-    
-    // Formateo de valores: arrays a string, undefined a &amp;quot;N/A&amp;quot;
-    if (Array.isArray(value)) {
-        value = value.join(&#39;, &#39;);
-    } else if (value === undefined) {
-        value = &amp;quot;N/A&amp;quot;;
-    }
-    
-    // Formateo de la clave (ej. &#39;estado_revision&#39; -&amp;gt; &#39;Estado Revision&#39;)
-    const displayName = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, &#39; &#39;);
-
-    // Fila de la tabla transpuesta (Campo | Valor)
-    // Se recomienda usar &amp;lt;th&amp;gt; para la clave para mejor semántica.
-    htmlContent += `&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;${displayName}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${value}&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;`;
-}
-
-htmlContent += &#39;&amp;lt;/tbody&amp;gt;&amp;lt;/table&amp;gt;&#39;;
-
-// 4. Insertamos el HTML generado en el contenedor
-sidebarContainer.innerHTML = htmlContent;
-
-// 5. Añadimos el contenedor al renderizado final
-dv.container.appendChild(sidebarContainer);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;const page = dv.current();&lt;br /&gt;
+const headerText = &lt;a href=&quot;http://page.file.name/&quot; target=&quot;_blank&quot; class=&quot;external-link&quot;&gt;page.file.name&lt;/a&gt;;&lt;br /&gt;
+const ignoredKeys = [&lt;br /&gt;
+&amp;quot;file&amp;quot;, &amp;quot;aliases&amp;quot;, &amp;quot;cssclass&amp;quot;, &amp;quot;tag&amp;quot;, &amp;quot;tags&amp;quot;, &amp;quot;outlinks&amp;quot;,&lt;br /&gt;
+&amp;quot;inlinks&amp;quot;, &amp;quot;etags&amp;quot;, &amp;quot;path&amp;quot;, &amp;quot;position&amp;quot;, &amp;quot;url&amp;quot;,&lt;br /&gt;
+&amp;quot;permalink&amp;quot;, &amp;quot;layout&amp;quot;, &amp;quot;eleventyComputed&amp;quot;, &amp;quot;settings&amp;quot; // Añadidos campos comunes de Eleventy&lt;br /&gt;
+];&lt;/p&gt;
+&lt;p&gt;// 1. Creamos el contenedor DIV principal con las clases de estilo y posicionamiento&lt;br /&gt;
+const sidebarContainer = dv.el(&amp;quot;div&amp;quot;, &amp;quot;&amp;quot;, { cls: customClasses });&lt;/p&gt;
+&lt;p&gt;let htmlContent = &#39;&#39;;&lt;/p&gt;
+&lt;p&gt;// 2. Generación del encabezado (Header)&lt;br /&gt;
+htmlContent += &lt;code&gt;&amp;lt;div class=&amp;quot;sidebar-header&amp;quot;&amp;gt;${headerText}&amp;lt;/div&amp;gt;&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;// 3. Inicio de la tabla de metadatos (transpuesta)&lt;br /&gt;
+htmlContent += &#39;&lt;/p&gt;&lt;table&gt;&lt;tbody&gt;&#39;;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;const frontmatterKeys = Object.keys(page)&lt;br /&gt;
+.filter(key =&amp;gt; !ignoredKeys.includes(key) &amp;amp;&amp;amp; typeof page[key] !== &#39;object&#39;);&lt;/p&gt;
+&lt;p&gt;for (const key of frontmatterKeys) {&lt;br /&gt;
+let value = page[key];&lt;/p&gt;
+&lt;p&gt;// Formateo de valores: arrays a string, undefined a &amp;quot;N/A&amp;quot;&lt;br /&gt;
+if (Array.isArray(value)) {&lt;br /&gt;
+value = value.join(&#39;, &#39;);&lt;br /&gt;
+} else if (value === undefined) {&lt;br /&gt;
+value = &amp;quot;N/A&amp;quot;;&lt;br /&gt;
+}&lt;/p&gt;
+&lt;p&gt;// Formateo de la clave (ej. &#39;estado_revision&#39; -&amp;gt; &#39;Estado Revision&#39;)&lt;br /&gt;
+const displayName = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, &#39; &#39;);&lt;/p&gt;
+&lt;p&gt;// Fila de la tabla transpuesta (Campo | Valor)&lt;br /&gt;
+// Se recomienda usar &lt;th&gt; para la clave para mejor semántica.&lt;br /&gt;
+htmlContent += &lt;code&gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;${displayName}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${value}&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&lt;/code&gt;;&lt;br /&gt;
+}&lt;/th&gt;&lt;/p&gt;
+&lt;p&gt;htmlContent += &#39;&lt;/p&gt;&lt;/tbody&gt;&lt;/table&gt;&#39;;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;// 4. Insertamos el HTML generado en el contenedor&lt;br /&gt;
+sidebarContainer.innerHTML = htmlContent;&lt;/p&gt;
+&lt;p&gt;// 5. Añadimos el contenedor al renderizado final&lt;br /&gt;
+dv.container.appendChild(sidebarContainer);&lt;/p&gt;
 
             </content>
             <link href="https://eldelapanaderia.github.io/W/" />
@@ -81,7 +73,7 @@ dv.container.appendChild(sidebarContainer);&lt;/code&gt;&lt;/pre&gt;
                 Help
                 
             </title>
-            <updated>2025-11-14T21:48:41Z</updated>
+            <updated>2025-11-15T00:08:37Z</updated>
             <id>https://eldelapanaderia.github.io/</id>
             <content type="html">
                 &lt;blockquote&gt;
