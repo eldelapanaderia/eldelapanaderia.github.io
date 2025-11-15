@@ -10,19 +10,7 @@ test
 
 <div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr></tbody></table></div>
 
-# esto es una prueba de h1
 
-askmalksm
-## esto es una prueba de h2
-
-asl,sla
-### esto es una prueba de h3
-
-als,ñals
-
-#### esto es una prueba de h4
-
-oaksoask
 
 <div style="float: right; width: 300px; padding: 0; margin: 0 0 1em 20px; border: 1px solid #ccc; border-radius: 5px; overflow: hidden; clear: both; font-size: 0.9em;"><div style="background-color: #337ab7; color: white; font-weight: bold; text-align: center; padding: 8px;">Metadatos de la Nota</div><table style="width: 100%; border-collapse: collapse; margin: 0;"><tbody><tr>
         <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Dg-publish</td>
@@ -31,5 +19,3 @@ oaksoask
         <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Dg-permalink</td>
         <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">/W</td>
     </tr></tbody></table></div><div style="clear: right;"><span></span></div>
-ksoakoks
-
