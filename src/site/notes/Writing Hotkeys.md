@@ -30,4 +30,5 @@ oaksoask
     </tr><tr>
         <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Dg-permalink</td>
         <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">/W</td>
-    </tr></tbody></table></div>
+    </tr></tbody></table></div><div style="clear: right;"><span></span></div>
+ksoakoks
