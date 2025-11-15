@@ -9,7 +9,10 @@ Tambien plugin smart typography que sustituye al escribir
 test
 
 <div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr></tbody></table></div>
-
+# H1
+## H2
+### H3
+#### H4
 ```
 // --- CONFIGURACIÓN DE ESTILOS Y PARÁMETROS ---
 // CLASES CSS: Define las clases para el posicionamiento (wiki-sidebar) y el estilo (callout-info).
