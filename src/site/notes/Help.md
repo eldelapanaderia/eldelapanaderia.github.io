@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-permalink":"/","permalink":"/","tags":["gardenEntry"]}
+{"dg-publish":true,"dg-permalink":"/","permalink":"/","tags":["navconfig","gardenEntry"]}
 ---
 
 > [!info]+ Ideas Vault
