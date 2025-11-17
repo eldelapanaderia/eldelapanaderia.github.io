@@ -1,0 +1,61 @@
+{# src/site/_includes/components/user/sidebar/top/02-frequent-links.njk #}
+
+<div class="frequent-links-container">
+    <h3 class="frequent-links-title">Enlaces Rápidos</h3>
+    <ul class="frequent-links-list">
+        {# PERSONALIZA ESTOS ENLACES #}
+        <li><a href="/" class="sidebar-link">🏡 Inicio</a></li>
+        <li><a href="/seccion-importante/" class="sidebar-link">📚 Guía de Estudio</a></li>
+        <li><a href="/contacto/" class="sidebar-link">✉️ Contacto</a></li>
+        <li><a href="/colecciones/" class="sidebar-link">🗂️ Todas las Notas</a></li>
+    </ul>
+</div>
+
+{# 
+    Estilos CSS. Se recomienda moverlos a tu archivo SCSS personalizado 
+    (src/site/styles/user/custom-layout.scss) para una mejor organización.
+#}
+<style>
+/* Contenedor del bloque */
+.frequent-links-container {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color, #eee); /* Separador visual */
+    margin-bottom: 10px;
+}
+
+/* Título de la sección */
+.frequent-links-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 10px 0;
+    padding: 0 10px;
+}
+
+/* Lista */
+.frequent-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Enlaces */
+.frequent-links-list li {
+    margin: 0;
+}
+
+.frequent-links-list a.sidebar-link {
+    display: block; /* Ocupa todo el ancho del <li> para facilitar el clic */
+    padding: 8px 10px;
+    text-decoration: none;
+    color: var(--text-normal);
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+}
+
+.frequent-links-list a.sidebar-link:hover {
+    background-color: var(--hover-background, #f5f5f5);
+    color: var(--text-accent);
+}
+</style>
