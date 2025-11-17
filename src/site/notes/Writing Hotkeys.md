@@ -8,7 +8,7 @@ Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro d
 Tambien plugin smart typography que sustituye al escribir
 test
 
-<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr></tbody></table></div>
+<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr><tr><td>Test</td><td>test</td></tr></tbody></table></div>
 
 
 
@@ -18,4 +18,7 @@ test
     </tr><tr>
         <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Dg-permalink</td>
         <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">/W</td>
+    </tr><tr>
+        <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Test</td>
+        <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">test</td>
     </tr></tbody></table></div><div style="clear: right;"><span></span></div>
