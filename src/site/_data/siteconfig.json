@@ -1,0 +1,19 @@
+// src/site/_data/siteconfig.json
+
+{
+    "mainNav": [
+        {
+            "title": "🏡 Inicio",
+            "url": "/"
+        },
+        {
+            "title": "📚 Guía de Estudio",
+            "url": "/guia/introduccion/"
+        },
+        {
+            "title": "🗂️ Todas las Notas",
+            "url": "/colecciones/"
+        }
+    ],
+    "siteName": "Mi Jardín Digital"
+}
