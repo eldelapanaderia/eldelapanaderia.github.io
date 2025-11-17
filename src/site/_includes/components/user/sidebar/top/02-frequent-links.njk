@@ -4,8 +4,8 @@
     <h3 class="frequent-links-title">Enlaces Rápidos</h3>
     <ul class="frequent-links-list">
         
-        {# Itera sobre el array de enlaces que cargamos desde el archivo de datos navigation.js #}
-        {% for link in navigation.mainLinks %}
+        {# Itera directamente sobre la variable global siteconfig.mainNav #}
+        {% for link in siteconfig.mainNav %}
             <li>
                 <a href="{{ link.url | url }}" class="sidebar-link">{{ link.title }}</a>
             </li>
