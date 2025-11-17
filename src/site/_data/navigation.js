@@ -1,21 +1,23 @@
 // src/site/_data/navigation.js
 
 module.exports = {
-  // Función para obtener la lista de enlaces de navegación principal
   mainLinks: (eleventy) => {
-    
-    // 1. Busca la nota que tenga la propiedad 'dg-home' establecida a true.
-    const homepage = eleventy.collections.all.find(item => 
-        item.data['dg-home'] === true
-    );
+    // 1. Buscamos la colección generada automáticamente por Eleventy para la etiqueta 'navconfig'.
+    // Esta colección SIEMPRE es un array, garantizando que el acceso sea seguro.
+    const configNotes = eleventy.collections.navconfig; 
 
-    // 2. Si se encuentra la página de inicio Y tiene la propiedad 'main_nav_links'
-    if (homepage && homepage.data.main_nav_links) {
-      // 3. Devuelve esa lista de enlaces
-      return homepage.data.main_nav_links;
+    // Verificamos si existe la colección y tiene al menos una nota
+    if (configNotes && configNotes.length > 0) {
+      // Tomamos la primera nota que tenga esta etiqueta (la más reciente)
+      const configNote = configNotes[0]; 
+      
+      // Verificamos y devolvemos los enlaces
+      if (configNote.data.main_nav_links) {
+        return configNote.data.main_nav_links;
+      }
     }
 
-    // 4. Devuelve una lista de respaldo
+    // Devolvemos un array vacío como respaldo
     return [];
   }
 };
