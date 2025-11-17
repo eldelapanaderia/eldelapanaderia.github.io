@@ -1,0 +1,82 @@
+{# Este archivo reemplaza el filetree por defecto con un índice de etiquetas (tags). #}
+
+{# 1. Definición del contenedor principal de la sidebar (mantiene el comportamiento original de la barra lateral) #}
+<div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
+    x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" 
+    x-data="{isDesktop: true, showFilesMobile: false}">
+
+    <div x-show.important="!isDesktop" style="display: none;">
+        {%include "components/filetreeNavbar.njk"%}
+    </div>
+        
+    <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div>
+
+    <nav class="filetree-sidebar" x-show.important="isDesktop || showFilesMobile" style="display: none;">
+        
+        {# SLOTS: Mantiene los slots antes del título #}
+        {% for imp in dynamics.filetree.beforeTitle %}
+            {% include imp %}
+        {% endfor %}
+        
+        {# TÍTULO CENTRAL #}
+        <a href="/" style="text-decoration: none;">
+            <h1 style="text-align:center;">{{meta.siteName}}</h1>
+        </a>
+        
+        {# SLOTS: Mantiene los slots después del título #}
+        {% for imp in dynamics.filetree.afterTitle %}
+            {% include imp %}
+        {% endfor %}
+
+        {# Muestra el botón de búsqueda si está habilitado #}
+        {% if settings.dgEnableSearch === true%}
+            <div style="display: flex; justify-content: center;">
+                {% include "components/searchButton.njk" %}
+            </div>
+        {%endif%}
+
+        {# 2. CONTENIDO PRINCIPAL: Índice de Etiquetas (Reemplazo del filetree) #}
+        <div class="custom-tag-index-container">
+            <h2 style="text-align: center; margin-top: 1em; margin-bottom: 0.5em;">Índice de Etiquetas</h2>
+            
+            <div class="tag-list">
+                {# Itera sobre todas las etiquetas disponibles en Eleventy #}
+                {# Usamos el filtro 'sort' para un listado alfabético #}
+                {% for tag in collections.tagList | sort %}
+                    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                    
+                    <div class="tag-link-wrapper">
+                        <a href="{{ tagUrl | url }}">{{ tag }}</a> 
+                        {# Muestra el número de notas en esa etiqueta #}
+                        <span class="tag-count">({{ collections[tag] | length }})</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+</div>
+
+{# 3. Estilos en línea para el Índice de Etiquetas (Opcional, pero recomendado para mantener la estética) #}
+<style>
+    .custom-tag-index-container {
+        padding: 0 10px;
+    }
+    .tag-link-wrapper {
+        padding: 5px 10px;
+        border-bottom: 1px solid var(--border-color, #eee);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tag-link-wrapper a {
+        text-decoration: none;
+        color: var(--text-normal);
+    }
+    .tag-link-wrapper a:hover {
+        color: var(--text-accent);
+    }
+    .tag-count {
+        color: var(--text-muted);
+        font-size: 0.85em;
+    }
+</style>
