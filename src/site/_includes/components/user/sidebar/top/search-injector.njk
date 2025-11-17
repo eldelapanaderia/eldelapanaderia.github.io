@@ -4,32 +4,28 @@
     Inyectamos el componente de búsqueda. 
     Añadimos un contenedor para aplicar estilos y posicionarlo si es necesario.
 #}
-<div class="header-search-container">
+<div class="sidebar-search-container">
     {% include "components/searchButton.njk" %}
 </div>
-
 {# 
     Añadimos estilos básicos. El CSS final dependerá de tu diseño, 
     pero este 'float: right' lo coloca a la derecha del título o tags.
 #}
 <style>
-    .header-search-container {
-        /* Fuerza la posición a la derecha si es posible dentro de la cabecera */
-        float: right; 
-        margin-left: 15px;
-        /* Asegura que no se rompa el layout si la cabecera es pequeña */
-        display: inline-flex; 
-        align-items: center;
-        height: 100%; /* Asegura que se alinee verticalmente en la cabecera */
-    }
-
-    /* En pantallas pequeñas, el 'float' puede romperse, se recomienda gestionar esto en tu SCSS */
-    @media (max-width: 768px) {
-        .header-search-container {
-            float: none;
-            display: block;
-            margin: 10px 0;
-            text-align: center;
-        }
-    }
+    .sidebar-search-container {
+    /* 1. Resetear el layout: Asegura que no tenga flotadores ni ancho fijo */
+    float: none !important; 
+    width: 100%; /* Ocupa todo el ancho de la barra lateral */
+    
+    /* 2. Padding y Margen: Da espacio alrededor del componente 
+    padding: 10px 0;
+    margin-bottom: 10px;
+    */
+    
+    /* 3. Centrado Horizontal: Usa Flexbox para centrar el botón dentro del contenedor */
+    display: flex;
+    justify-content: center; /* Centra el contenido (el botón) horizontalmente */
+    align-items: center;
+    text-align: center;
+}
 </style>
