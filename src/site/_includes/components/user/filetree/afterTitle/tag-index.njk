@@ -1,17 +1,19 @@
-{# Este componente se inyecta en el slot 'filetree/top' de la barra lateral. #}
+{# src/site/_includes/components/user/filetree/afterTitle/tag-index.njk #}
 
 <div class="custom-tag-index-wrapper">
     
     <h2>Índice de Etiquetas</h2>
     
     <div class="tag-list">
-        {# Itera sobre la colección de etiquetas de Eleventy. Asumimos que collections.tagList existe. #}
+        {# Itera sobre todas las etiquetas disponibles en Eleventy, ordenadas alfabéticamente #}
         {% for tag in collections.tagList | sort %}
+            {# Construye la URL de la página de la etiqueta (ej. /tags/python/) #}
             {% set tagUrl %}/tags/{{ tag }}/{% endset %}
             
             <div class="tag-link-wrapper">
+                {# Enlace a la página de la colección de tags #}
                 <a href="{{ tagUrl | url }}">{{ tag }}</a> 
-                {# collections[tag] es la lista de notas que tienen esa etiqueta #}
+                {# Muestra el número de notas que tienen esa etiqueta #}
                 <span class="tag-count">({{ collections[tag] | length }})</span>
             </div>
         {% endfor %}
@@ -19,8 +21,52 @@
 
 </div>
 
-{# 
-    NOTAS:
-    - Este código es muy simple para evitar conflictos de sintaxis o variables.
-    - Las variables del componente original (x-data, menuItem, filetree) no existen en este slot, por eso las omitimos.
-#}
+{# ---------------------------------------------------- #}
+{# Estilos en línea para asegurar la apariencia y evitar dependencia de SCSS #}
+{# Nota: Es mejor mover esto a un archivo .scss si el estilo en línea no es deseado #}
+<style>
+    /* Estilos del contenedor principal */
+    .custom-tag-index-wrapper {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    /* Estilo del título */
+    .custom-tag-index-wrapper h2 {
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 5px;
+        border-bottom: 2px solid var(--border-color, #ccc);
+        padding-bottom: 5px;
+    }
+    
+    /* Estilo de cada fila de etiqueta */
+    .tag-link-wrapper {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color-alt, #eee);
+    }
+    
+    /* Estilo del enlace de etiqueta */
+    .tag-link-wrapper a {
+        text-decoration: none;
+        color: var(--text-normal);
+        /* Alinea el enlace a la izquierda */
+        flex-grow: 1; 
+    }
+    .tag-link-wrapper a:hover {
+        color: var(--text-accent);
+    }
+    
+    /* Estilo del contador de notas */
+    .tag-count {
+        color: var(--text-muted, #777);
+        font-size: 0.85em;
+        padding-left: 10px;
+    }
+</style>
