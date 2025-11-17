@@ -125,68 +125,66 @@
 
 | File                                                                                                                                                               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [[AAT Timeline Docs\|AAT Timeline Docs]]                                                                                                                        |
-| [[AAT Timeline Example\|AAT Timeline Example]]                                                                                                                  |
 | [[Help\|Help]]                                                                                                                                                  |
 | [[Jerarquía Tags\|Jerarquía Tags]]                                                                                                                              |
-| [[Longform\|Longform]]                                                                                                                                          |
-| [[Misc/FileClasses/Research\|Research]]                                                                                                                         |
+| [[AAT Timeline Docs\|AAT Timeline Docs]]                                                                                                                        |
 | [[Misc/FileClasses/Etimology\|Etimology]]                                                                                                                       |
-| [[Misc/Excalidraw/Esferas de la Existencia diagrama\|Esferas de la Existencia diagrama]]                                                                        |
+| [[Misc/FileClasses/Research\|Research]]                                                                                                                         |
 | [[Misc/Excalidraw/Fluencia 2\|Fluencia 2]]                                                                                                                      |
+| [[Misc/Excalidraw/Esferas de la Existencia diagrama\|Esferas de la Existencia diagrama]]                                                                        |
 | [[Misc/Excalidraw/Fluencia exc\|Fluencia exc]]                                                                                                                  |
 | [[Misc/Excalidraw/Funcionamiento Nero Afluencia\|Funcionamiento Nero Afluencia]]                                                                                |
-| [[Misc/Excalidraw/Tipos Cristales 1 1\|Tipos Cristales 1 1]]                                                                                                    |
 | [[Misc/Excalidraw/Generación Tipos Nerales\|Generación Tipos Nerales]]                                                                                          |
+| [[Misc/Excalidraw/Tipos Cristales 1 1\|Tipos Cristales 1 1]]                                                                                                    |
 | [[Misc/Excalidraw/Tipos Cristales 2\|Tipos Cristales 2]]                                                                                                        |
 | [[Misc/Excalidraw/Tipos Nerales\|Tipos Nerales]]                                                                                                                |
-| [[Misc/Smart/Chats/UNTITLED CHAT 2024-10-11 08 34 14\|UNTITLED CHAT 2024-10-11 08 34 14]]                                                                       |
 | [[Misc/Templates/Abrir Comillas Latinas\|Abrir Comillas Latinas]]                                                                                               |
 | [[Misc/Templates/ArcTemplate\|ArcTemplate]]                                                                                                                     |
 | [[Misc/Templates/Building\|Building]]                                                                                                                           |
+| [[Misc/Templates/Character Graph\|Character Graph]]                                                                                                             |
+| [[Misc/Templates/Cerrar Comillas Latinas\|Cerrar Comillas Latinas]]                                                                                             |
 | [[Misc/Templates/ChapterTemplate\|ChapterTemplate]]                                                                                                             |
 | [[Misc/Templates/Character\|Character]]                                                                                                                         |
-| [[Misc/Templates/Cerrar Comillas Latinas\|Cerrar Comillas Latinas]]                                                                                             |
-| [[Misc/Templates/Character Graph\|Character Graph]]                                                                                                             |
 | [[Misc/Templates/Condition\|Condition]]                                                                                                                         |
 | [[Misc/Templates/Country\|Country]]                                                                                                                             |
-| [[Misc/Templates/Ethnicity\|Ethnicity]]                                                                                                                         |
 | [[Misc/Templates/Document\|Document]]                                                                                                                           |
 | [[Misc/Templates/Empty\|Empty]]                                                                                                                                 |
-| [[Misc/Templates/Etimology\|Etimology]]                                                                                                                         |
 | [[Misc/Templates/Guiding Document\|Guiding Document]]                                                                                                           |
 | [[Misc/Templates/Fundamentals\|Fundamentals]]                                                                                                                   |
+| [[Misc/Templates/Ethnicity\|Ethnicity]]                                                                                                                         |
+| [[Misc/Templates/Etimology\|Etimology]]                                                                                                                         |
 | [[Misc/Templates/Guión Diálogo\|Guión Diálogo]]                                                                                                                 |
-| [[Misc/Templates/Item\|Item]]                                                                                                                                   |
 | [[Misc/Templates/Idea\|Idea]]                                                                                                                                   |
+| [[Misc/Templates/Item\|Item]]                                                                                                                                   |
 | [[Misc/Templates/Language\|Language]]                                                                                                                           |
-| [[Misc/Templates/Magic\|Magic]]                                                                                                                                 |
-| [[Misc/Templates/Map\|Map]]                                                                                                                                     |
 | [[Misc/Templates/Location\|Location]]                                                                                                                           |
+| [[Misc/Templates/Map\|Map]]                                                                                                                                     |
+| [[Misc/Templates/Magic\|Magic]]                                                                                                                                 |
 | [[Misc/Templates/Milestone\|Milestone]]                                                                                                                         |
-| [[Misc/Templates/Material\|Material]]                                                                                                                           |
 | [[Misc/Templates/Militar Conflict\|Militar Conflict]]                                                                                                           |
-| [[Misc/Templates/Myth\|Myth]]                                                                                                                                   |
-| [[Misc/Templates/Note\|Note]]                                                                                                                                   |
+| [[Misc/Templates/Material\|Material]]                                                                                                                           |
 | [[Misc/Templates/Organization Graph\|Organization Graph]]                                                                                                       |
+| [[Misc/Templates/Note\|Note]]                                                                                                                                   |
+| [[Misc/Templates/Myth\|Myth]]                                                                                                                                   |
 | [[Misc/Templates/Organization\|Organization]]                                                                                                                   |
 | [[Misc/Templates/Pantheon\|Pantheon]]                                                                                                                           |
 | [[Misc/Templates/Plot\|Plot]]                                                                                                                                   |
 | [[Misc/Templates/Profession\|Profession]]                                                                                                                       |
-| [[Misc/Templates/Prompt\|Prompt]]                                                                                                                               |
-| [[Misc/Templates/Room\|Room]]                                                                                                                                   |
 | [[Misc/Templates/Prose\|Prose]]                                                                                                                                 |
-| [[Misc/Templates/SceneTemplate\|SceneTemplate]]                                                                                                                 |
+| [[Misc/Templates/Prompt\|Prompt]]                                                                                                                               |
 | [[Misc/Templates/Research\|Research]]                                                                                                                           |
-| [[Misc/Templates/Settlement\|Settlement]]                                                                                                                       |
-| [[Misc/Templates/Spell-Rituals\|Spell-Rituals]]                                                                                                                 |
+| [[Misc/Templates/Room\|Room]]                                                                                                                                   |
+| [[Misc/Templates/SceneTemplate\|SceneTemplate]]                                                                                                                 |
 | [[Misc/Templates/Specie\|Specie]]                                                                                                                               |
 | [[Misc/Templates/Technology\|Technology]]                                                                                                                       |
+| [[Misc/Templates/Spell-Rituals\|Spell-Rituals]]                                                                                                                 |
 | [[Misc/Templates/Title\|Title]]                                                                                                                                 |
-| [[Misc/Templates/World Notes\|World Notes]]                                                                                                                     |
-| [[Misc/Templates/Tradition\|Tradition]]                                                                                                                         |
-| [[Misc/Templates/Writing Tip\|Writing Tip]]                                                                                                                     |
 | [[Misc/Templates/Templater_Startup_Script\|Templater_Startup_Script]]                                                                                           |
+| [[Misc/Templates/Settlement\|Settlement]]                                                                                                                       |
+| [[Misc/Templates/Tradition\|Tradition]]                                                                                                                         |
+| [[Misc/Templates/World Notes\|World Notes]]                                                                                                                     |
+| [[Misc/Templates/Writing Tip\|Writing Tip]]                                                                                                                     |
+| [[Misc/Smart/Chats/UNTITLED CHAT 2024-10-11 08 34 14\|UNTITLED CHAT 2024-10-11 08 34 14]]                                                                       |
 | [[Research/Etimology/Anámnesis\|Anámnesis]]                                                                                                                     |
 | [[Research/Etimology/Acrópolis\|Acrópolis]]                                                                                                                     |
 | [[Research/Etimology/Continente\|Continente]]                                                                                                                   |
@@ -194,139 +192,126 @@
 | [[Research/Etimology/Curiosidad\|Curiosidad]]                                                                                                                   |
 | [[Research/Etimology/Empatía\|Empatía]]                                                                                                                         |
 | [[Research/Etimology/Fatuo\|Fatuo]]                                                                                                                             |
-| [[Research/Etimology/Helio\|Helio]]                                                                                                                             |
-| [[Research/Etimology/Menhir\|Menhir]]                                                                                                                           |
 | [[Research/Etimology/Nexo\|Nexo]]                                                                                                                               |
+| [[Research/Etimology/Menhir\|Menhir]]                                                                                                                           |
 | [[Research/Etimology/Teriomorfo\|Teriomorfo]]                                                                                                                   |
+| [[Research/Etimology/Helio\|Helio]]                                                                                                                             |
 | [[Research/Etimology/Yermo\|Yermo]]                                                                                                                             |
-| [[Research/Kairos\|Kairos]]                                                                                                                                     |
-| [[Research/Gravity Train\|Gravity Train]]                                                                                                                       |
 | [[Research/Mating types\|Mating types]]                                                                                                                         |
-| [[Research/Mythical Beasts of Wales\|Mythical Beasts of Wales]]                                                                                                 |
-| [[Research/Prompts/Aesthetic of world\|Aesthetic of world]]                                                                                                     |
+| [[Research/Gravity Train\|Gravity Train]]                                                                                                                       |
 | [[Research/Prompts/Currency\|Currency]]                                                                                                                         |
+| [[Research/Prompts/Aesthetic of world\|Aesthetic of world]]                                                                                                     |
 | [[Research/Prompts/Setting/Architecture\|Architecture]]                                                                                                         |
 | [[Research/Prompts/Setting/Culture\|Culture]]                                                                                                                   |
-| [[Research/Prompts/Setting/History\|History]]                                                                                                                   |
 | [[Research/Prompts/Setting/General\|General]]                                                                                                                   |
+| [[Research/Prompts/Setting/History\|History]]                                                                                                                   |
 | [[Research/Prompts/Setting/Industry\|Industry]]                                                                                                                 |
 | [[Research/Prompts/Setting/Language\|Language]]                                                                                                                 |
+| [[Research/Prompts/Setting/Population\|Population]]                                                                                                             |
 | [[Research/Prompts/Setting/Magic\|Magic]]                                                                                                                       |
 | [[Research/Prompts/Setting/Military\|Military]]                                                                                                                 |
-| [[Research/Prompts/Setting/Population\|Population]]                                                                                                             |
-| [[Research/Prompts/Setting/Religion\|Religion]]                                                                                                                 |
 | [[Research/Prompts/Setting/Politics\|Politics]]                                                                                                                 |
-| [[Research/Prompts/Setting/Science\|Science]]                                                                                                                   |
+| [[Research/Prompts/Setting/Religion\|Religion]]                                                                                                                 |
 | [[Research/Prompts/Setting/Survival\|Survival]]                                                                                                                 |
+| [[Research/Prompts/Setting/Science\|Science]]                                                                                                                   |
 | [[Research/Prompts/Setting/Technology\|Technology]]                                                                                                             |
 | [[Research/Prompts/Prompts\|Prompts]]                                                                                                                           |
+| [[Research/Kairos\|Kairos]]                                                                                                                                     |
+| [[Research/Mythical Beasts of Wales\|Mythical Beasts of Wales]]                                                                                                 |
 | [[Research/Species Inspiration from Mithology \|Species Inspiration from Mithology ]]                                                                           |
-| [[Research/Resources table\|Resources table]]                                                                                                                   |
-| [[Research/Resources table (eng)\|Resources table (eng)]]                                                                                                       |
 | [[Research/Transporte Mercancías Edad Media\|Transporte Mercancías Edad Media]]                                                                                 |
+| [[Research/Resources table (eng)\|Resources table (eng)]]                                                                                                       |
+| [[Research/Resources table\|Resources table]]                                                                                                                   |
 | [[Worlds/Firmamento/Afluencia\|Afluencia]]                                                                                                                      |
-| [[Worlds/Firmamento/Firmamento fundamentos\|Firmamento fundamentos]]                                                                                            |
-| [[Worlds/Firmamento/Firmamento\|Firmamento]]                                                                                                                    |
 | [[Worlds/Firmamento/Backlog\|Backlog]]                                                                                                                          |
-| [[Worlds/Firmamento/Fauna y Flora\|Fauna y Flora]]                                                                                                              |
+| [[Worlds/Firmamento/Firmamento fundamentos\|Firmamento fundamentos]]                                                                                            |
 | [[Worlds/Firmamento/Especies\|Especies]]                                                                                                                        |
-| [[Worlds/Firmamento/Longform/Firmamento/Index\|Index]]                                                                                                          |
-| [[Worlds/Firmamento/Longform/Firmamento/Scenes/Arco 1\|Arco 1]]                                                                                                 |
+| [[Worlds/Firmamento/Fauna y Flora\|Fauna y Flora]]                                                                                                              |
+| [[Worlds/Firmamento/Firmamento\|Firmamento]]                                                                                                                    |
 | [[Worlds/Firmamento/Longform/Firmamento/Scenes/Chapter 1\|Chapter 1]]                                                                                           |
-| [[Worlds/Firmamento/Longform/Firmamento/Scenes/tremendo 2\|tremendo 2]]                                                                                         |
+| [[Worlds/Firmamento/Longform/Firmamento/Scenes/Arco 1\|Arco 1]]                                                                                                 |
 | [[Worlds/Firmamento/Longform/Firmamento/Scenes/Tremendo\|Tremendo]]                                                                                             |
+| [[Worlds/Firmamento/Longform/Firmamento/Scenes/tremendo 2\|tremendo 2]]                                                                                         |
+| [[Worlds/Firmamento/Longform/Firmamento/Index\|Index]]                                                                                                          |
 | [[Worlds/Firmamento/Longform/Firmamento/Stats\|Stats]]                                                                                                          |
 | [[Worlds/Firmamento/Ideas\|Ideas]]                                                                                                                              |
-| [[Worlds/Firmamento/Magia\|Magia]]                                                                                                                              |
-| [[Worlds/Firmamento/Notes/Artesanía\|Artesanía]]                                                                                                                |
+| [[Worlds/Firmamento/Nombres\|Nombres]]                                                                                                                          |
 | [[Worlds/Firmamento/Notes/Alquimia\|Alquimia]]                                                                                                                  |
-| [[Worlds/Firmamento/Notes/Bestias primordiales\|Bestias primordiales]]                                                                                          |
+| [[Worlds/Firmamento/Notes/Artesanía\|Artesanía]]                                                                                                                |
 | [[Worlds/Firmamento/Notes/Canalización\|Canalización]]                                                                                                          |
+| [[Worlds/Firmamento/Notes/Bestias primordiales\|Bestias primordiales]]                                                                                          |
 | [[Worlds/Firmamento/Notes/Caos\|Caos]]                                                                                                                          |
 | [[Worlds/Firmamento/Notes/Ciclo Día Noche\|Ciclo Día Noche]]                                                                                                    |
+| [[Worlds/Firmamento/Notes/Clima\|Clima]]                                                                                                                        |
 | [[Worlds/Firmamento/Notes/Cardinales\|Cardinales]]                                                                                                              |
+| [[Worlds/Firmamento/Notes/Condensación\|Condensación]]                                                                                                          |
 | [[Worlds/Firmamento/Notes/Convergencia\|Convergencia]]                                                                                                          |
 | [[Worlds/Firmamento/Notes/Creación de la existencia\|Creación de la existencia]]                                                                                |
 | [[Worlds/Firmamento/Notes/El Arlequín\|El Arlequín]]                                                                                                            |
-| [[Worlds/Firmamento/Notes/Clima\|Clima]]                                                                                                                        |
 | [[Worlds/Firmamento/Notes/Dewyn\|Dewyn]]                                                                                                                        |
-| [[Worlds/Firmamento/Notes/Condensación\|Condensación]]                                                                                                          |
-| [[Worlds/Firmamento/Notes/Elementales\|Elementales]]                                                                                                            |
-| [[Worlds/Firmamento/Notes/El Desvanecimiento\|El Desvanecimiento]]                                                                                              |
 | [[Worlds/Firmamento/Notes/El Relator\|El Relator]]                                                                                                              |
 | [[Worlds/Firmamento/Notes/El Crisol\|El Crisol]]                                                                                                                |
+| [[Worlds/Firmamento/Notes/El Desvanecimiento\|El Desvanecimiento]]                                                                                              |
+| [[Worlds/Firmamento/Notes/Elementales\|Elementales]]                                                                                                            |
 | [[Worlds/Firmamento/Notes/Esferas de la Existencia\|Esferas de la Existencia]]                                                                                  |
-| [[Worlds/Firmamento/Notes/Flujos\|Flujos]]                                                                                                                      |
-| [[Worlds/Firmamento/Notes/Evocación\|Evocación]]                                                                                                                |
 | [[Worlds/Firmamento/Notes/Emanación\|Emanación]]                                                                                                                |
+| [[Worlds/Firmamento/Notes/Evocación\|Evocación]]                                                                                                                |
+| [[Worlds/Firmamento/Notes/Flujos\|Flujos]]                                                                                                                      |
 | [[Worlds/Firmamento/Notes/Fluencia\|Fluencia]]                                                                                                                  |
-| [[Worlds/Firmamento/Notes/Kymarion\|Kymarion]]                                                                                                                  |
+| [[Worlds/Firmamento/Notes/Islas\|Islas]]                                                                                                                        |
 | [[Worlds/Firmamento/Notes/Formas\|Formas]]                                                                                                                      |
 | [[Worlds/Firmamento/Notes/Kharave\|Kharave]]                                                                                                                    |
-| [[Worlds/Firmamento/Notes/Islas\|Islas]]                                                                                                                        |
+| [[Worlds/Firmamento/Notes/Kymarion\|Kymarion]]                                                                                                                  |
 | [[Worlds/Firmamento/Notes/La Muerte\|La Muerte]]                                                                                                                |
 | [[Worlds/Firmamento/Notes/La Artesana\|La Artesana]]                                                                                                            |
-| [[Worlds/Firmamento/Notes/La Guarda\|La Guarda]]                                                                                                                |
 | [[Worlds/Firmamento/Notes/La Guía\|La Guía]]                                                                                                                    |
-| [[Worlds/Firmamento/Notes/Maldiciones\|Maldiciones]]                                                                                                            |
-| [[Worlds/Firmamento/Notes/Mundos\|Mundos]]                                                                                                                      |
-| [[Worlds/Firmamento/Notes/Nero\|Nero]]                                                                                                                          |
-| [[Worlds/Firmamento/Notes/Navegantes\|Navegantes]]                                                                                                              |
-| [[Worlds/Firmamento/Notes/Nerales\|Nerales]]                                                                                                                    |
+| [[Worlds/Firmamento/Notes/La Guarda\|La Guarda]]                                                                                                                |
 | [[Worlds/Firmamento/Notes/Legados\|Legados]]                                                                                                                    |
+| [[Worlds/Firmamento/Notes/Mundos\|Mundos]]                                                                                                                      |
+| [[Worlds/Firmamento/Notes/Maldiciones\|Maldiciones]]                                                                                                            |
+| [[Worlds/Firmamento/Notes/Navegantes\|Navegantes]]                                                                                                              |
+| [[Worlds/Firmamento/Notes/Nero\|Nero]]                                                                                                                          |
 | [[Worlds/Firmamento/Notes/Proyección\|Proyección]]                                                                                                              |
 | [[Worlds/Firmamento/Notes/Reminiscencias\|Reminiscencias]]                                                                                                      |
+| [[Worlds/Firmamento/Notes/Nerales\|Nerales]]                                                                                                                    |
 | [[Worlds/Firmamento/Notes/test\|test]]                                                                                                                          |
-| [[Worlds/Firmamento/Notes/Vinculación\|Vinculación]]                                                                                                            |
 | [[Worlds/Firmamento/Notes/Ordinales\|Ordinales]]                                                                                                                |
+| [[Worlds/Firmamento/Notes/Vinculación\|Vinculación]]                                                                                                            |
 | [[Worlds/Firmamento/Notes/Vestigio\|Vestigio]]                                                                                                                  |
-| [[Worlds/Firmamento/Notes/{Gremio de aventureros}\|{Gremio de aventureros}]]                                                                                    |
 | [[Worlds/Firmamento/Notes/{Situación Pre Desvanecimiento}\|{Situación Pre Desvanecimiento}]]                                                                    |
+| [[Worlds/Firmamento/Notes/{Gremio de aventureros}\|{Gremio de aventureros}]]                                                                                    |
 | [[Worlds/Firmamento/Notes/Ánima\|Ánima]]                                                                                                                        |
-| [[Worlds/Firmamento/Nombres\|Nombres]]                                                                                                                          |
-| [[Worlds/Firmamento/Notes\|Notes]]                                                                                                                              |
+| [[Worlds/Firmamento/Magia\|Magia]]                                                                                                                              |
 | [[Worlds/Firmamento/Personajes\|Personajes]]                                                                                                                    |
 | [[Worlds/Firmamento/Tribus\|Tribus]]                                                                                                                            |
-| [[Writing Tips/7 Antagonist Mistakes\|7 Antagonist Mistakes]]                                                                                                   |
+| [[Worlds/Firmamento/Notes\|Notes]]                                                                                                                              |
 | [[Writing Tips/10 Best Ways to Start a Novel\|10 Best Ways to Start a Novel]]                                                                                   |
-| [[Writing Tips/Building premises\|Building premises]]                                                                                                           |
-| [[Writing Tips/Characters Tips Links\|Characters Tips Links]]                                                                                                   |
+| [[Writing Tips/7 Antagonist Mistakes\|7 Antagonist Mistakes]]                                                                                                   |
 | [[Writing Tips/8 Mistakes to Avoid When Crafting a Magic System\|8 Mistakes to Avoid When Crafting a Magic System]]                                             |
+| [[Writing Tips/Building premises\|Building premises]]                                                                                                           |
 | [[Writing Tips/Character personalities\|Character personalities]]                                                                                               |
 | [[Writing Tips/Describing characters\|Describing characters]]                                                                                                   |
+| [[Writing Tips/Characters Tips Links\|Characters Tips Links]]                                                                                                   |
 | [[Writing Tips/How to Build Suspense in Your Story\|How to Build Suspense in Your Story]]                                                                       |
-| [[Writing Tips/How to Structure a Fantasy Scene\|How to Structure a Fantasy Scene]]                                                                             |
 | [[Writing Tips/How to Structure a Book Chapter So Readers Love the Pace of Your Novel\|How to Structure a Book Chapter So Readers Love the Pace of Your Novel]] |
 | [[Writing Tips/How to Name Characters\|How to Name Characters]]                                                                                                 |
+| [[Writing Tips/How to Structure a Fantasy Scene\|How to Structure a Fantasy Scene]]                                                                             |
 | [[Writing Tips/How to Structure Chapters of Your Novel\|How to Structure Chapters of Your Novel]]                                                               |
+| [[Writing Tips/How to write characters\|How to write characters]]                                                                                               |
 | [[Writing Tips/How to Write a Theme for Your Story\|How to Write a Theme for Your Story]]                                                                       |
 | [[Writing Tips/How to write better sentences\|How to write better sentences]]                                                                                   |
-| [[Writing Tips/How to write fantasy character arcs\|How to write fantasy character arcs]]                                                                       |
-| [[Writing Tips/How to write characters\|How to write characters]]                                                                                               |
 | [[Writing Tips/How to Write Compelling Fantasy Character Relationships\|How to Write Compelling Fantasy Character Relationships]]                               |
+| [[Writing Tips/How to write fantasy character arcs\|How to write fantasy character arcs]]                                                                       |
+| [[Writing Tips/Naming\|Naming]]                                                                                                                                 |
 | [[Writing Tips/How to write your fantasy novel\|How to write your fantasy novel]]                                                                               |
 | [[Writing Tips/Magic building a useful list to understand what your magic is used for\|Magic building a useful list to understand what your magic is used for]] |
-| [[Writing Tips/Narrative Structure Chart\|Narrative Structure Chart]]                                                                                           |
-| [[Writing Tips/Naming\|Naming]]                                                                                                                                 |
 | [[Writing Tips/Story Structures\|Story Structures]]                                                                                                             |
+| [[Writing Tips/Narrative Structure Chart\|Narrative Structure Chart]]                                                                                           |
+| [[Writing Tips/Writing Dialogues Syntax\|Writing Dialogues Syntax]]                                                                                             |
 | [[Writing Tips/The 7 Levels of Prose\|The 7 Levels of Prose]]                                                                                                   |
 | [[Writing Tips/The Hourglass Outlining Method\|The Hourglass Outlining Method]]                                                                                 |
-| [[Writing Tips/Writing Dialogues Syntax\|Writing Dialogues Syntax]]                                                                                             |
+| [[AAT Timeline Example\|AAT Timeline Example]]                                                                                                                  |
+| [[Longform\|Longform]]                                                                                                                                          |
 | [[Writing Hotkeys\|Writing Hotkeys]]                                                                                                                            |
 
 { .block-language-dataview}
-
-<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-home</td><td>true</td></tr><tr><td>Test</td><td>test</td></tr><tr><td>Dg-permalink</td><td>/</td></tr></tbody></table></div>
-
-> [!NOTE] Title
-> <pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'
-    at DataviewInlineApi.eval (plugin:dataview:19027:21)
-    at evalInContext (plugin:dataview:19028:7)
-    at asyncEvalInContext (plugin:dataview:19038:32)
-    at DataviewJSRenderer.render (plugin:dataview:19064:19)
-    at DataviewJSRenderer.onload (plugin:dataview:18606:14)
-    at DataviewJSRenderer.load (app://obsidian.md/app.js:1:689336)
-    at DataviewApi.executeJs (plugin:dataview:19607:18)
-    at DataviewCompiler.eval (plugin:digitalgarden:10763:23)
-    at Generator.next (&lt;anonymous&gt;)
-    at fulfilled (plugin:digitalgarden:77:24)</pre>
