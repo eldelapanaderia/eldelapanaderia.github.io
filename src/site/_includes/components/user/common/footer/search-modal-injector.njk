@@ -1,0 +1,8 @@
+{# src/site/_includes/components/user/common/footer/search-modal-injector.njk #}
+
+{# 
+    Este componente incluye el HTML del modal de búsqueda (<div id="globalsearch">) 
+    y, lo más importante, carga searchScript.njk, que contiene la función 
+    JavaScript `window.toggleSearch()` y toda la lógica de búsqueda.
+#}
+{% include "components/searchContainer.njk" %}
