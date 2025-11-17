@@ -1,0 +1,72 @@
+{# src/site/_includes/components/user/common/header/search-injector.njk #}
+
+{# 
+    Inyectamos el componente de búsqueda. 
+    Añadimos un contenedor para aplicar estilos y posicionarlo si es necesario.
+#}
+<div class="sidebar-search-container">
+    {% include "components/searchButton.njk" %}
+</div>
+{# 
+    Añadimos estilos básicos. El CSS final dependerá de tu diseño, 
+    pero este 'float: right' lo coloca a la derecha del título o tags.
+#}
+<style>
+    .sidebar-search-container {
+    /* 1. Resetear el layout: Asegura que no tenga flotadores ni ancho fijo */
+    float: none !important; 
+    width: 100%; /* Ocupa todo el ancho de la barra lateral */
+    
+    /* 2. Padding y Margen: Da espacio alrededor del componente 
+    padding: 10px 0;
+    margin-bottom: 10px;
+    */
+    padding: 10px;
+    
+    /* 3. Centrado Horizontal: Usa Flexbox para centrar el botón dentro del contenedor */
+    display: flex;
+    justify-content: center; /* Centra el contenido (el botón) horizontalmente */
+    align-items: center;
+    text-align: center;
+}
+.search-button {
+    /* Hacemos que ocupe todo el espacio disponible dentro de .sidebar-search-container */
+    width: 100%; 
+    
+    /* Activamos Flexbox en el botón */
+    display: flex; 
+    
+    /* Usamos 'space-between' para separar el Search Icon (izquierda) del Search Text (derecha/centro) */
+    /* Nota: Esto separa los elementos al máximo, luego usaremos margen automático para centrar el texto. */
+    justify-content: space-between; 
+    
+    /* Alineación vertical */
+    align-items: center;
+    
+    /* Quitamos el text-align que puede interferir */
+    text-align: left; 
+    
+    /* Ajustes visuales (puedes variar el padding) */
+    padding: 8px 12px;
+    margin: 0px;
+}
+
+/* 3. Estilos para la sección de Texto/Atajo (search-text) */
+.search-text {
+    /* Usamos margen automático a ambos lados para centrar este grupo 
+       en el espacio restante entre el icono y el borde derecho del botón. */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Para centrar el texto real dentro del span */
+    text-align: center; 
+    
+    /* Nota: Si el search-icon tiene un ancho fijo, este margin: auto centrará el texto en el ancho del botón menos el ancho del icono. */
+}
+
+/* 4. Estilos para el Icono (Opcional, si quieres asegurar su posición) */
+.search-icon {
+    /* Asegura que el icono se mantenga a la izquierda sin margen automático */
+    margin-right: 0;
+}
+</style>
