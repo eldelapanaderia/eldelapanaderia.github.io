@@ -28,4 +28,43 @@
     align-items: center;
     text-align: center;
 }
+.search-button {
+    /* Hacemos que ocupe todo el espacio disponible dentro de .sidebar-search-container */
+    width: 100%; 
+    
+    /* Activamos Flexbox en el botón */
+    display: flex; 
+    
+    /* Usamos 'space-between' para separar el Search Icon (izquierda) del Search Text (derecha/centro) */
+    /* Nota: Esto separa los elementos al máximo, luego usaremos margen automático para centrar el texto. */
+    justify-content: space-between; 
+    
+    /* Alineación vertical */
+    align-items: center;
+    
+    /* Quitamos el text-align que puede interferir */
+    text-align: left; 
+    
+    /* Ajustes visuales (puedes variar el padding) */
+    padding: 8px 12px;
+}
+
+/* 3. Estilos para la sección de Texto/Atajo (search-text) */
+.search-text {
+    /* Usamos margen automático a ambos lados para centrar este grupo 
+       en el espacio restante entre el icono y el borde derecho del botón. */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Para centrar el texto real dentro del span */
+    text-align: center; 
+    
+    /* Nota: Si el search-icon tiene un ancho fijo, este margin: auto centrará el texto en el ancho del botón menos el ancho del icono. */
+}
+
+/* 4. Estilos para el Icono (Opcional, si quieres asegurar su posición) */
+.search-icon {
+    /* Asegura que el icono se mantenga a la izquierda sin margen automático */
+    margin-right: 0;
+}
 </style>
