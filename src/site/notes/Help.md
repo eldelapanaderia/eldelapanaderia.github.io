@@ -313,5 +313,6 @@
 | [[AAT Timeline Example\|AAT Timeline Example]]                                                                                                                  |
 | [[Longform\|Longform]]                                                                                                                                          |
 | [[Writing Hotkeys\|Writing Hotkeys]]                                                                                                                            |
+| [[Digital Garden Custom Components\|Digital Garden Custom Components]]                                                                                          |
 
 { .block-language-dataview}
