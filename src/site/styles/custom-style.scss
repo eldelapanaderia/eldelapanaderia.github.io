@@ -10,4 +10,17 @@ body {
     //  h1 {
     //   color: black;
     //  }
+    .content {
+    /* (Opción 1: Reducir todos los márgenes) */
+    max-width: 1200px !important; 
+    
+    /* 2. Reserva el espacio para la sidebar flotante */
+    /* Ancho de la sidebar (300px) + Margen de separación (30px) = 330px */
+    padding-right: 330px !important; 
+
+    /* 3. Ajusta los márgenes generales y céntralo */
+    padding-left: 20px !important; /* Mantiene un margen izquierdo */
+    margin: 20px auto !important; /* Arriba/Abajo 20px, Centrado Horizontal */
+    
+    }
 }
