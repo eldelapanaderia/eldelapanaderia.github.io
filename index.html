@@ -24,6 +24,7 @@
 <style>body.css-settings-manager{--h1-size:2em;--h2-size:1.75em;--h3-size:1.5em;--h4-size:1.4em;--h5-size:1.25em;--h6-size:1.125em}</style>
 <style></style>
 </head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager theme-dark mod-windows is-frameless is-hidden-frameless obsidian-app show-ribbon show-view-header is-maximized hider-status hider-meta minimal-theme minimal-default-light minimal-flexoki-dark minimal-readable minimal-light minimal-dark links-int-on links-ext-on full-width-media img-grid minimal-folding chart-default-width table-default-width img-default-width iframe-default-width map-100 css-settings-manager callouts-default trim-cols h1-l h2-l h3-l checkbox-circle pdf-seamless-on pdf-invert-dark pdf-blend-light sidebar-tabs-default tab-names-off vault-profile-default ribbon-hidden maximize-tables-off tabs-default tab-stack-top minimal-tab-title-hover default is-focused">
 <nav class="navbar">
 <div class="navbar-inner">
 <a href="/" style="text-decoration:none">
@@ -62,7 +63,8 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-11-17T11:43:13.874Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-11-17T11:43:13.874Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-11-17T11:43:13.874Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-11-17T11:46:42.968Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-11-17T11:46:42.968Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-11-17T11:46:42.968Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<main class="content cm-s-obsidian">
 <header>
 <div class="header-meta">
 </div>
@@ -237,19 +239,13 @@ Fantasy Map Simulator (Steam)</p>
 <a href="https://tennessine.co.uk/flags/" target="_blank" class="external-link">Flag designer</a><br>
 <a href="https://lorcaeditor.com/documentos" target="_blank" class="external-link">Lorca Editor (ortografía y estilo)</a></p>
 </div></div>
-<table class="block-language-dataview">
-<thead>
-<tr>
-<th>File</th>
+<div class="block-language-dataview table-wrapper"><table class="dataview table-view-table">
+<thead class="table-view-thead">
+<tr class="table-view-tr-header">
+<th class="table-view-th">File</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">AAT Timeline Docs</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">AAT Timeline Example</a></td>
-</tr>
+<tbody class="table-view-tbody">
 <tr>
 <td><a class="internal-link" target="" data-note-icon="" href="/">Help</a></td>
 </tr>
@@ -257,19 +253,19 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Jerarquía Tags</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Longform</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Research</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">AAT Timeline Docs</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Etimology</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Esferas de la Existencia diagrama</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Research</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Fluencia 2</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Esferas de la Existencia diagrama</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Fluencia exc</a></td>
@@ -278,19 +274,16 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Funcionamiento Nero Afluencia</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Tipos Cristales 1 1</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Generación Tipos Nerales</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Generación Tipos Nerales</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Tipos Cristales 1 1</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Tipos Cristales 2</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Tipos Nerales</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">UNTITLED CHAT 2024-10-11 08 34 14</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Abrir Comillas Latinas</a></td>
@@ -302,16 +295,16 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Building</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">ChapterTemplate</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Character</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Character Graph</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Cerrar Comillas Latinas</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Character Graph</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">ChapterTemplate</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Character</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Condition</a></td>
@@ -320,16 +313,10 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Country</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Ethnicity</a></td>
-</tr>
-<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Document</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Empty</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Etimology</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Guiding Document</a></td>
@@ -338,43 +325,49 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Fundamentals</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Guión Diálogo</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Ethnicity</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Item</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Etimology</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Guión Diálogo</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Idea</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Item</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Language</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Magic</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Map</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Location</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Milestone</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Map</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Material</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Magic</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Milestone</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Militar Conflict</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Myth</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Material</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Organization Graph</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Note</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Organization Graph</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Myth</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Organization</a></td>
@@ -389,25 +382,19 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Profession</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Prompt</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Room</a></td>
-</tr>
-<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Prose</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">SceneTemplate</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Prompt</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Research</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Settlement</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Room</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Spell-Rituals</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">SceneTemplate</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Specie</a></td>
@@ -416,19 +403,28 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Technology</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Spell-Rituals</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Title</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">World Notes</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Templater_Startup_Script</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Settlement</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Tradition</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">World Notes</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Writing Tip</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Templater_Startup_Script</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">UNTITLED CHAT 2024-10-11 08 34 14</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Anámnesis</a></td>
@@ -452,37 +448,31 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Fatuo</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Helio</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Nexo</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Menhir</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Nexo</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Teriomorfo</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Teriomorfo</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Helio</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Yermo</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Kairos</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Mating types</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Gravity Train</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Mating types</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Mythical Beasts of Wales</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Currency</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Aesthetic of world</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Currency</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Architecture</a></td>
@@ -491,10 +481,10 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Culture</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">History</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">General</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">General</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">History</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Industry</a></td>
@@ -503,25 +493,25 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Language</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Population</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Magic</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Military</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Population</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Politics</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Religion</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Politics</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Survival</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Science</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Survival</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Technology</a></td>
@@ -530,49 +520,55 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Prompts</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Kairos</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Mythical Beasts of Wales</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Species Inspiration from Mithology </a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Resources table</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Resources table (eng)</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Transporte Mercancías Edad Media</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Resources table (eng)</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Resources table</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Afluencia</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Firmamento fundamentos</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Firmamento</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Backlog</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Fauna y Flora</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Firmamento fundamentos</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Especies</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Index</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Fauna y Flora</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Arco 1</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Firmamento</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Chapter 1</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">tremendo 2</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Arco 1</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Tremendo</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">tremendo 2</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Index</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Stats</a></td>
@@ -581,19 +577,19 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link" target="" data-note-icon="" href="/Worlds/Firmamento/Ideas/">Ideas</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Magia</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Artesanía</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Nombres</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Alquimia</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Bestias primordiales</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Artesanía</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Canalización</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Bestias primordiales</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Caos</a></td>
@@ -602,7 +598,13 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Ciclo Día Noche</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Clima</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Cardinales</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Condensación</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Convergencia</a></td>
@@ -614,19 +616,7 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">El Arlequín</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Clima</a></td>
-</tr>
-<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Dewyn</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Condensación</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Elementales</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">El Desvanecimiento</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">El Relator</a></td>
@@ -635,22 +625,28 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">El Crisol</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">El Desvanecimiento</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Elementales</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Esferas de la Existencia</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Flujos</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Evocación</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Emanación</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Evocación</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Flujos</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Fluencia</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Kymarion</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Islas</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Formas</a></td>
@@ -659,7 +655,7 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Kharave</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Islas</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Kymarion</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">La Muerte</a></td>
@@ -668,28 +664,25 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">La Artesana</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">La Guarda</a></td>
-</tr>
-<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">La Guía</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Maldiciones</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">La Guarda</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Legados</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Mundos</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Nero</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Maldiciones</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Navegantes</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Nerales</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Legados</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Nero</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Proyección</a></td>
@@ -698,31 +691,31 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Reminiscencias</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">test</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Nerales</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Vinculación</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">test</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Ordinales</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Vestigio</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Vinculación</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">{Gremio de aventureros}</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Vestigio</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">{Situación Pre Desvanecimiento}</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">{Gremio de aventureros}</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Ánima</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Nombres</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Notes</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Magia</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Personajes</a></td>
@@ -731,19 +724,19 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Tribus</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">7 Antagonist Mistakes</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Notes</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">10 Best Ways to Start a Novel</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Building premises</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Characters Tips Links</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">7 Antagonist Mistakes</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">8 Mistakes to Avoid When Crafting a Magic System</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Building premises</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Character personalities</a></td>
@@ -752,10 +745,10 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Describing characters</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">How to Build Suspense in Your Story</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Characters Tips Links</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">How to Structure a Fantasy Scene</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">How to Build Suspense in Your Story</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to Structure a Book Chapter So Readers Love the Pace of Your Novel</a></td>
@@ -764,7 +757,13 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to Name Characters</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">How to Structure a Fantasy Scene</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to Structure Chapters of Your Novel</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">How to write characters</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to Write a Theme for Your Story</a></td>
@@ -773,13 +772,13 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to write better sentences</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">How to Write Compelling Fantasy Character Relationships</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to write fantasy character arcs</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">How to write characters</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">How to Write Compelling Fantasy Character Relationships</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Naming</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">How to write your fantasy novel</a></td>
@@ -788,13 +787,13 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">Magic building a useful list to understand what your magic is used for</a></td>
 </tr>
 <tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Story Structures</a></td>
+</tr>
+<tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">Narrative Structure Chart</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Naming</a></td>
-</tr>
-<tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Story Structures</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">Writing Dialogues Syntax</a></td>
 </tr>
 <tr>
 <td><a class="internal-link is-unresolved" href="/404" target="">The 7 Levels of Prose</a></td>
@@ -803,27 +802,17 @@ Fantasy Map Simulator (Steam)</p>
 <td><a class="internal-link is-unresolved" href="/404" target="">The Hourglass Outlining Method</a></td>
 </tr>
 <tr>
-<td><a class="internal-link is-unresolved" href="/404" target="">Writing Dialogues Syntax</a></td>
+<td><a class="internal-link is-unresolved" href="/404" target="">AAT Timeline Example</a></td>
+</tr>
+<tr>
+<td><a class="internal-link is-unresolved" href="/404" target="">Longform</a></td>
 </tr>
 <tr>
 <td><a class="internal-link" target="" data-note-icon="" href="/W/">Writing Hotkeys</a></td>
 </tr>
 </tbody>
-</table>
-<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-home</td><td>true</td></tr><tr><td>Test</td><td>test</td></tr><tr><td>Dg-permalink</td><td>/</td></tr></tbody></table></div>
-<p>[!NOTE] Title</p>
-<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'
-
-<p>at DataviewInlineApi.eval (plugin:dataview:19027:21)<br>
-at evalInContext (plugin:dataview:19028:7)<br>
-at asyncEvalInContext (plugin:dataview:19038:32)<br>
-at DataviewJSRenderer.render (plugin:dataview:19064:19)<br>
-at DataviewJSRenderer.onload (plugin:dataview:18606:14)<br>
-at DataviewJSRenderer.load (app://obsidian.md/app.js:1:689336)<br>
-at DataviewApi.executeJs (plugin:dataview:19607:18)<br>
-at DataviewCompiler.eval (plugin:digitalgarden:10763:23)<br>
-at Generator.next (&lt;anonymous&gt;)<br>
-at fulfilled (plugin:digitalgarden:77:24)</p></pre>
+</table></div>
+</main>
 <aside>
 <div class="sidebar">
 <div class="sidebar-container">
@@ -843,4 +832,5 @@ at fulfilled (plugin:digitalgarden:77:24)</p></pre>
 </iframe>
 <script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
 <script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
 </html>
