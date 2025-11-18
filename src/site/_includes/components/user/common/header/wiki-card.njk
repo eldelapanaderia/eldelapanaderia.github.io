@@ -1,0 +1,124 @@
+{# src/site/_includes/components/user/common/header/wiki-card.njk #}
+
+{% set displayedProperties = [] %}
+
+{# 
+    1. Filtramos las propiedades del Frontmatter (data) para excluir metadatos internos 
+    que no queremos mostrar en la ficha. Añade o quita propiedades según necesites.
+#}
+{% for key, value in data %}
+    {% if key not in ['title', 'permalink', 'layout', 'tags', 'page', 'collections', 'eleventyComputed', 'date', 'noteIcon', 'hide', 'pinned', 'dg-home'] %}
+        {% set displayedProperties = displayedProperties.push({ key: key, value: value }), displayedProperties %}
+    {% endif %}
+{% endfor %}
+
+{% if data.image or displayedProperties.length > 0 %}
+<aside class="wiki-card-container">
+    
+    {# 2. Header de la ficha (Título de la Nota) #}
+    <div class="wiki-card-header">
+        <h3>{{ title }}</h3>
+    </div>
+
+    <div class="wiki-card-content">
+        
+        {# 3. Imagen (Si la propiedad 'image' existe en el Frontmatter) #}
+        {% if data.image %}
+            <div class="wiki-card-image">
+                <img src="{{ data.image | url }}" alt="Imagen destacada para {{ title }}" style="max-width: 100%; height: auto; display: block;">
+            </div>
+        {% endif %}
+
+        {# 4. Tabla de Propiedades #}
+        {% if displayedProperties.length > 0 %}
+            <table class="wiki-card-properties">
+                <tbody>
+                    {% for prop in displayedProperties %}
+                        <tr>
+                            {# Columna del Campo (Key) #}
+                            <td class="property-key">{{ prop.key | replace("_", " ") | capitalize }}:</td>
+                            
+                            {# Columna del Valor (Value) #}
+                            <td class="property-value">
+                                {% if prop.value is string %}
+                                    {{ prop.value }}
+                                {% elif prop.value is iterable and prop.value is not string %}
+                                    {# Muestra listas/arrays como una lista separada por comas #}
+                                    {{ prop.value | join(', ') }}
+                                {% else %}
+                                    {{ prop.value }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        
+    </div>
+</aside>
+{% endif %}
+
+{# 5. Estilos CSS para Posicionamiento y Apariencia #}
+<style>
+.wiki-card-container {
+    /* POSICIONAMIENTO CLAVE */
+    float: right; /* Mueve la caja a la derecha y permite que el texto fluya */
+    width: 250px; /* Ancho fijo para la caja (ajustar según preferencia) */
+    margin: 0 0 1em 1em; /* Margen: 0 arriba/abajo, 1em a la izquierda (separación del texto) */
+    
+    /* ESTILOS VISUALES */
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 6px;
+    background-color: var(--background-secondary, #f7f7f7);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Asegura que el borde rodee la imagen */
+    font-size: 0.9em;
+}
+
+.wiki-card-header {
+    background-color: var(--background-modifier-accent, #e0e0e0);
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color, #ccc);
+}
+
+.wiki-card-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-normal, #333);
+}
+
+.wiki-card-content {
+    padding: 10px;
+}
+
+.wiki-card-image {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color, #eee);
+    border-radius: 4px;
+}
+
+.wiki-card-properties {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wiki-card-properties td {
+    padding: 4px 0;
+    vertical-align: top;
+    border-top: 1px solid var(--border-color-subtle, #f0f0f0);
+}
+
+.wiki-card-properties tr:first-child td {
+    border-top: none;
+}
+
+.property-key {
+    font-weight: 600;
+    width: 40%;
+    padding-right: 5px;
+    color: var(--text-muted, #666);
+}
+</style>
