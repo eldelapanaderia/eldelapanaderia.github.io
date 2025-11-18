@@ -1,17 +1,40 @@
 {# src/site/_includes/components/user/sidebar/top/03-frequent-links.njk #}
 
-{% set pinnedNotes = collections.pinned %}
+{% macro findPinned(tree) %}
+    {# 
+        Macro recursiva para buscar notas con la propiedad .pinned=true 
+        en cualquier nivel del árbol.
+    #}
+    {% set pinnedList = [] %}
+    
+    {% for key, node in tree %}
+        {# 1. Buscar notas pineadas en el nivel actual #}
+        {% if node.isNote and node.pinned %}
+            {% set pinnedList = pinnedList.push(node), pinnedList %}
+        
+        {# 2. Si es una carpeta, llamar a la recursión #}
+        {% elif node.isFolder %}
+            {% set subPinned = findPinned(node) %}
+            {# Combinar la lista actual con la lista devuelta por el nivel inferior #}
+            {% set pinnedList = pinnedList | concat(subPinned) %}
+        {% endif %}
+    {% endfor %}
+    
+    {{ return(pinnedList) }}
+{% endmacro %}
 
-{% if pinnedNotes.length > 0 %}
+{% set allPinnedNotes = findPinned(filetree) %}
+
+{% if allPinnedNotes.length > 0 %}
     <div class="frequent-links-container">
         <h3 class="frequent-links-title">Notas Destacadas</h3>
         <ul class="frequent-links-list">
             
-            {% for note in pinnedNotes %}
+            {% for note in allPinnedNotes %}
                 <li>
-                    {# El título de la nota es note.data.title y el enlace es note.url o note.permalink #}
-                    <a href="{{ note.url }}" class="sidebar-link">
-                        {{ note.data.title }}
+                    {# Usamos .permalink y .name, las propiedades expuestas en la estructura filetree #}
+                    <a href="{{ note.permalink }}" class="sidebar-link">
+                        {{ note.name }}
                     </a>
                 </li>
             {% endfor %}
@@ -20,4 +43,4 @@
     </div>
 {% endif %}
 
-{# [Tus estilos CSS aquí para .frequent-links-container y la lista] #}
+{# [Tus estilos CSS aquí] #}
