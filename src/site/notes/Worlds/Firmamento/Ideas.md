@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Worlds/Firmamento/Ideas/"}
+{"dg-publish":true,"permalink":"/Worlds/Firmamento/Ideas/","pinned":true}
 ---
 
 # *Protagonista*
