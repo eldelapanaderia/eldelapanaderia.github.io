@@ -1,0 +1,16 @@
+{# Temporal: Para depurar el contexto de la página #}
+<details style="margin: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+    <summary style="font-weight: bold; cursor: pointer;">
+        DEBUG: Contexto de la Página
+    </summary>
+    <pre style="white-space: pre-wrap; font-size: 0.8em; max-height: 500px; overflow: auto;">
+        {# Inspeccionamos el objeto 'page' completo #}
+        OBJETO PAGE: 
+        {{ page | dump }} 
+        
+        ---
+        
+        OBJETO DATA (General):
+        {{ data | dump }}
+    </pre>
+</details>
