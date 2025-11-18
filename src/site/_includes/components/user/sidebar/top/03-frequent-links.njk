@@ -1,0 +1,23 @@
+{# src/site/_includes/components/user/sidebar/top/03-frequent-links.njk #}
+
+{% set pinnedNotes = collections.pinned %}
+
+{% if pinnedNotes.length > 0 %}
+    <div class="frequent-links-container">
+        <h3 class="frequent-links-title">Notas Destacadas</h3>
+        <ul class="frequent-links-list">
+            
+            {% for note in pinnedNotes %}
+                <li>
+                    {# El título de la nota es note.data.title y el enlace es note.url o note.permalink #}
+                    <a href="{{ note.url }}" class="sidebar-link">
+                        {{ note.data.title }}
+                    </a>
+                </li>
+            {% endfor %}
+            
+        </ul>
+    </div>
+{% endif %}
+
+{# [Tus estilos CSS aquí para .frequent-links-container y la lista] #}
