@@ -3,13 +3,16 @@
 {% set currentSlug = page.fileSlug or 'NO-SLUG' %}
 
 <div style="
-    border: 3px dashed red; 
+    float: right; /* Permite que el texto fluya */
+    width: 250px; /* Ancho fijo */
+    margin: 0 0 1em 1em; /* Espaciado */
+    border: 3px dashed var(--accent-color, red);
     padding: 10px; 
-    margin: 10px 0; 
-    background-color: #ffeaea;
+    background-color: var(--background-modifier-hover, #ffeaea);
+    border-radius: 6px;
+    font-size: 0.9em;
 ">
     <h3>✅ COMPONENTE CARGADO</h3>
-    <p>Título de la nota (Variable 'title'): **{{ title or 'SIN TÍTULO' }}**</p>
-    <p>Slug del archivo (Variable 'page.fileSlug'): **{{ currentSlug }}**</p>
-    <p>¿Variable 'collections' disponible?: **{{ collections | length or 'NO' }}**</p>
+    <p>Título de la nota: **{{ title or 'SIN TÍTULO' }}**</p>
+    <p>Slug del archivo: **{{ currentSlug }}**</p>
 </div>
