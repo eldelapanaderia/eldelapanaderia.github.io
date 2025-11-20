@@ -4,6 +4,9 @@
     <summary>DEBUG: Contenido Completo de DATA</summary>
     <pre style="white-space: pre-wrap;">
         {# Inspecciona TODO lo que está disponible en el contexto de la plantilla #}
+        {{ page.data | dump }}
+        {{ page | dump }}
         {{ data | dump }}
+        {{ page.fileSlug | dump }}
     </pre>
 </details>
