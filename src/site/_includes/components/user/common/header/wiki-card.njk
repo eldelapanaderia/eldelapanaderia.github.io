@@ -1,79 +1,15 @@
 {# src/site/_includes/components/user/common/header/wiki-card.njk #}
 
-{% macro getNoteDataBySlug(collections, currentFileSlug) %}
-    {# Itera sobre todas las notas para encontrar la nota actual por su slug #}
-    {% set noteData = null %}
-    
-    {% for note in collections.all %}
-        {% if note.fileSlug == currentFileSlug %}
-            {# Cuando se encuentra la nota, su Frontmatter completo está en note.data #}
-            {% set noteData = note.data %}
-            {# Se encontró, salimos del loop #}
-        {% endif %}
-    {% endfor %}
-    
-    {{ return(noteData) }}
-{% endmacro %}
+{% set currentSlug = page.fileSlug or 'NO-SLUG' %}
 
-
-{# 
-    Llamamos a la macro usando las variables que sabemos que están disponibles:
-    - collections (variable global de Eleventy)
-    - page.fileSlug (confirmado por el debug)
-#}
-{% set noteData = getNoteDataBySlug(collections, page.fileSlug) %}
-
-{% set displayedProperties = [] %}
-
-{% if noteData %}
-    {% set cardTitle = noteData.title or title %}
-
-    {# 2. Iteramos sobre los datos encontrados en noteData #}
-    {% for key, value in noteData %}
-        {# Filtramos claves internas y las que ya son visibles #}
-        {% if key not in ['title', 'permalink', 'layout', 'tags', 'page', 'collections', 'eleventyComputed', 'date', 'noteIcon', 'hide', 'pinned', 'dg-home', 'image', 'settings', 'meta'] %}
-            {# Solo incluimos si el valor es un tipo de dato simple #}
-            {% if value is string or value is iterable and value is not object %}
-                {% set displayedProperties = displayedProperties.push({ key: key, value: value }), displayedProperties %}
-            {% endif %}
-        {% endif %}
-    {% endfor %}
-
-    {# 3. Renderizado de la ficha #}
-    {% if noteData.image or displayedProperties.length > 0 %}
-    <aside class="wiki-card-container">
-        
-        <div class="wiki-card-header">
-            <h3>{{ cardTitle }}</h3>
-        </div>
-        
-        <div class="wiki-card-content">
-            
-            {% if noteData.image %}
-                <div class="wiki-card-image">
-                    <img src="{{ noteData.image | url }}" alt="Imagen destacada para {{ cardTitle }}" style="max-width: 100%; height: auto; display: block;">
-                </div>
-            {% endif %}
-
-            <table class="wiki-card-properties">
-                <tbody>
-                    {% for prop in displayedProperties %}
-                        <tr>
-                            <td class="property-key">{{ prop.key | replace("_", " ") | capitalize }}:</td>
-                            <td class="property-value">
-                                {% if prop.value is iterable and prop.value is not string %}
-                                    {{ prop.value | join(', ') }}
-                                {% else %}
-                                    {{ prop.value }}
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </aside>
-    {% endif %}
-{% endif %}
-
-{# [Tus estilos CSS aquí, sin cambios] #}
+<div style="
+    border: 3px dashed red; 
+    padding: 10px; 
+    margin: 10px 0; 
+    background-color: #ffeaea;
+">
+    <h3>✅ COMPONENTE CARGADO</h3>
+    <p>Título de la nota (Variable 'title'): **{{ title or 'SIN TÍTULO' }}**</p>
+    <p>Slug del archivo (Variable 'page.fileSlug'): **{{ currentSlug }}**</p>
+    <p>¿Variable 'collections' disponible?: **{{ collections | length or 'NO' }}**</p>
+</div>
