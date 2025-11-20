@@ -14,11 +14,32 @@
 ">
     
     <div class="wiki-card-header">
-        <h3>✅ FICHA BASE CARGADA</h3>
+        <h3>✅ DEBUG: DATOS INYECTADOS</h3>
     </div>
     
     <div class="wiki-card-content">
-        <p>Título detectado: **{{ cardTitle }}**</p>
-        <p><i>Aquí irían tus propiedades custom.</i></p>
+        <p>Título: **{{ cardTitle }}**</p>
+        
+        <hr>
+        <h4>DEBUG: Variables computadas</h4>
+        
+        {% set rawData = userComputed.frontmatterRaw %}
+
+        {% if rawData and rawData.page %}
+            <p style="color: green; font-weight: bold;">✔ ACCESO EXITOSO a FRONTMATTER.</p>
+            <p>Valor de 'estado': 
+                <span style="background-color: yellow;">{{ rawData.estado or 'N/A' }}</span>
+            </p>
+            <p>Frontmatter Completo (RAW):</p>
+            <pre style="white-space: pre-wrap; font-size: 0.75em; background: #fff8e1; padding: 5px; border: 1px dashed #ccc;">
+                {{ rawData | dump(2) }}
+            </pre>
+        {% else %}
+            <p style="color: red; font-weight: bold;">❌ ERROR: La variable 'userComputed.frontmatterRaw' está vacía o inaccesible.</p>
+            <p>DEBUG COMPLETO DE userComputed:</p>
+            <pre style="white-space: pre-wrap; font-size: 0.75em; background: #ffeeee; padding: 5px; border: 1px dashed #ccc;">
+                {{ userComputed | dump(2) }}
+            </pre>
+        {% endif %}
     </div>
 </aside>
