@@ -1,30 +1,24 @@
 {# src/site/_includes/components/user/common/header/wiki-card.njk #}
 
-{# 
-    CLAVE: Accedemos a la nueva variable que inyectamos a través del archivo de datos custom.
-#}
-{% set noteData = userComputed.frontmatterRaw %} 
+{% set cardTitle = title or page.fileSlug or 'Nota sin título' %}
 
-{% set displayedProperties = [] %}
-
-{% if noteData %}
-    {# Filtramos las propiedades de sistema de Eleventy y Digital Garden #}
-    {% for key, value in noteData %}
-        {# Claves a ignorar (añadimos 'frontmatterRaw' para evitar bucle infinito) #}
-        {% if key not in ['title', 'permalink', 'layout', 'tags', 'page', 'collections', 'eleventyComputed', 'date', 'noteIcon', 'hide', 'pinned', 'dg-home', 'image', 'settings', 'meta', 'graph', 'filetree', 'userComputed', 'frontmatterRaw'] %}
-            {# ... (el resto de tu lógica de filtrado y renderizado es la misma) ... #}
-            {% if value is string or value is iterable and value is not object %}
-                {% set displayedProperties = displayedProperties.push({ key: key, value: value }), displayedProperties %}
-            {% endif %}
-        {% endif %}
-    {% endfor %}
-
-    {% set cardTitle = noteData.title or title %}
-
-    {# Lógica de renderizado de la ficha #}
-    {% if noteData.image or displayedProperties.length > 0 %}
-    <aside class="wiki-card-container">
-        {# ... (el resto de tu HTML) ... #}
-    </aside>
-    {% endif %}
-{% endif %}
+<aside class="wiki-card-container" style="
+    float: right; 
+    width: 250px; 
+    margin: 0 0 1em 1em; 
+    border: 3px solid var(--accent-color, blue);
+    padding: 10px; 
+    background-color: var(--background-modifier-hover, #e0f7fa);
+    border-radius: 6px;
+    font-size: 0.9em;
+">
+    
+    <div class="wiki-card-header">
+        <h3>✅ FICHA BASE CARGADA</h3>
+    </div>
+    
+    <div class="wiki-card-content">
+        <p>Título detectado: **{{ cardTitle }}**</p>
+        <p><i>Aquí irían tus propiedades custom.</i></p>
+    </div>
+</aside>
