@@ -6,7 +6,8 @@
     1. Filtramos las propiedades del Frontmatter (data) para excluir metadatos internos 
     que no queremos mostrar en la ficha. Añade o quita propiedades según necesites.
 #}
-{% for key, value in page.data %}
+{% console.log(page.data.frontmatter) %}
+{% for key, value in page.data.frontmatter %}
     {% if key not in ['title', 'permalink', 'layout', 'tags', 'page', 'collections', 'eleventyComputed', 'date', 'noteIcon', 'hide', 'pinned', 'dg-home'] %}
         {% set displayedProperties = displayedProperties.push({ key: key, value: value }), displayedProperties %}
     {% endif %}
