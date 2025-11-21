@@ -1,17 +1,25 @@
 function userComputed(data) {
-  const fm = data || {};
+  // Si existe data.page.fileSlug, entonces estamos en una nota real.
+  // Y sus datos propios están en "data" PERO tenemos que excluir
+  // todo lo que Eleventy añade por defecto.
 
-  // filtrar automáticamente todas las claves de frontmatter
-  const result = {};
+  const reservedKeys = [
+    "page", "collections", "tags", "layout",
+    "eleventyExcludeFromCollections",
+    "permalink", "content", "templateContent",
+    "template", "date", "updated", "created",
+    "graph", "filetree", "userComputed"
+  ];
 
-  for (const key in fm) {
-    // ignorar claves internas (esto se puede afinar)
-    if (key.startsWith("_") || key === "page" || key === "content") continue;
+  const fm = {};
 
-    result[key] = fm[key];
+  for (const key in data) {
+    if (!reservedKeys.includes(key)) {
+      fm[key] = data[key];
+    }
   }
 
-  return result;
+  return fm;
 }
 
 exports.userComputed = userComputed;
