@@ -1,8 +1,8 @@
 function userComputed(data) {
   return {
-    estado: data.estado,
-    tipo_contenido: data.tipo_contenido,
-    test: data.test
+    estado: fm.estado,
+    tipo_contenido: fm.tipo_contenido,
+    test: fm.test
   };
 }
 
