@@ -1,18 +1,13 @@
-// src/site/notes/custom.11tydata.js
+// notes/.11tydata.js
+module.exports = function(data) {
+  const ignoreKeys = ["page", "layout", "content", "eleventyComputed", "eleventyExcludeFromCollections", "permalink", "tags", "dg-publish", "dg-permalink", "cssclasses", "dg-pinned"];
 
-module.exports = {
-  eleventyComputed: {
-    // Sobrescribimos la clave 'userComputed' para añadir nuestros propios datos.
-    // El objeto 'data' contiene todo el Frontmatter.
-    userComputed: (data) => {
-      // Asume que userComputed ya existe o es un objeto vacío, 
-      // y le añade la nueva propiedad.
-      const currentComputed = data.userComputed || {};
-      
-      // Inyectamos todo el Frontmatter crudo de la nota bajo una clave única
-      currentComputed.frontmatterRaw = data;
+  const fm = {};
+  for (const key in data) {
+    if (!ignoreKeys.includes(key)) {
+      fm[key] = data[key];
+    }
+  }
 
-      return currentComputed;
-    },
-  },
+  return { userFrontmatter: fm };
 };
