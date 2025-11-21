@@ -1,33 +1,46 @@
 <div class="wiki-card-container">
   <h3>Ficha de Propiedades</h3>
-  <div class="wiki-card-content">
-    <p><strong>Estado:</strong> {{ estado }}</p>
-    <p><strong>Tipo Contenido:</strong> {{ tipo_contenido }}</p>
-    <p><strong>Test:</strong> {{ test }}</p>
+  <div class="wiki-card-content" id="wiki-card-content">
+    <p>Cargando...</p>
   </div>
 </div>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
   const scriptTag = document.getElementById("user-note-frontmatter");
   if (!scriptTag) return;
 
+  let frontmatter = {};
   try {
-    const frontmatter = JSON.parse(scriptTag.textContent.trim());
-    const contentEl = document.getElementById("wiki-card-content");
+    frontmatter = JSON.parse(scriptTag.textContent.trim());
+  } catch (e) {
+    console.error("Error parseando frontmatter:", e);
+  }
 
-    const estado = frontmatter.estado || "N/A";
-    const tipoContenido = frontmatter.tipo_contenido || "N/A";
-    const test = frontmatter.test || "N/A";
+  const contentEl = document.getElementById("wiki-card-content");
+  contentEl.innerHTML = ""; // limpiar
 
-    contentEl.innerHTML = `
-      <p><strong>Estado:</strong> ${estado}</p>
-      <p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>
-      <p><strong>Test:</strong> ${test}</p>
+  // Opcional: claves a ignorar (las internas de Digital Garden)
+  const ignoreKeys = ["dg-publish", "dg-permalink", "cssclasses", "dg-pinned", "tags"];
+
+  for (const [key, value] of Object.entries(frontmatter)) {
+    if (ignoreKeys.includes(key)) continue;
+
+    let displayValue = "";
+
+    if (Array.isArray(value)) {
+      // lista
+      displayValue = value.join(", ");
+    } else if (typeof value === "object" && value !== null) {
+      // objeto (muy raro en frontmatter)
+      displayValue = JSON.stringify(value);
+    } else {
+      displayValue = value ?? "N/A";
+    }
+
+    contentEl.innerHTML += `
+      <p><strong>${key}:</strong> ${displayValue}</p>
     `;
-  } catch(e) {
-    console.error("Error parseando frontmatter para wiki-card:", e);
   }
 });
 </script>
