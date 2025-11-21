@@ -1,21 +1,7 @@
-{% set dataToDump = {} %}
-{% set keysToIgnore = [
-  'collections', 'eleventyComputed', 'page', 'pkg', 'siteconfig',
-  'dynamics', 'meta', 'eleventy', 'content', 'link',
-  'hideDataview', 'taggify', 'title', 'permalink',
-  'layout', 'tags'
-] %}
+{# src/site/_includes/components/user/notes/beforeContent/expose-frontmatter.njk #}
 
-{% for key, value in data %}
-  {% if key not in keysToIgnore %}
-    {% set dataToDump = dataToDump | merge({ (key): value }) %}
-  {% endif %}
-{% endfor %}
-
-{% set fm = renderData.note.data or {} %}
+{% set fm = note or {} %} {# note debería contener el frontmatter si "Let all frontmatter through" está ON #}
 
 <script id="user-note-frontmatter" type="application/json">
 {{ fm | dump | safe }}
 </script>
-
-
