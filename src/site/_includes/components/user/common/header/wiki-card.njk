@@ -2,10 +2,12 @@
 
 {% set cardTitle = title or page.fileSlug or 'Nota sin título' %}
 
-{# 
-    CLAVE: Llama a la función buscadora, que usa el slug para encontrar la nota en las colecciones.
-#}
-{% set noteData = noteFinder.getFrontmatter(page.fileSlug) %}
+{# MODIFICACIÓN CLAVE: Comprobación de existencia doble antes de llamar #}
+{% set noteData = null %}
+
+{% if noteFinder and noteFinder.getFrontmatter %}
+    {% set noteData = noteFinder.getFrontmatter(page.fileSlug) %}
+{% endif %}
 
 {% set displayedProperties = [] %}
 
@@ -20,18 +22,18 @@
         
         <hr>
         
-        {% if noteData and noteData.estado %}
-            <p style="color: green; font-weight: bold;">🎉 ¡ÉXITO! FRONTMATTER ENCONTRADO.</p>
-            <p>Valor de 'estado': <span style="background-color: yellow;">{{ noteData.estado or 'N/A' }}</span></p>
-            <p>Propiedades relevantes:</p>
-            <table class="wiki-card-properties">
-                <tr><td>Estado:</td><td>{{ noteData.estado or 'N/A' }}</td></tr>
-                <tr><td>Tipo Contenido:</td><td>{{ noteData.tipo_contenido or 'N/A' }}</td></tr>
-            </table>
-            
+        {% if noteFinder and noteFinder.getFrontmatter %}
+            {# Ejecución solo si la herramienta existe #}
+            {% if noteData and noteData.estado %}
+                <p style="color: green; font-weight: bold;">🎉 ¡ÉXITO! FRONTMATTER ENCONTRADO.</p>
+                {# ... el resto de tu lógica de visualización ... #}
+                
+            {% else %}
+                <p style="color: red; font-weight: bold;">❌ FALLO EN LA BÚSQUEDA: Propiedades no encontradas.</p>
+            {% endif %}
         {% else %}
-            <p style="color: red; font-weight: bold;">❌ FALLO DEFINITIVO: La búsqueda no encontró las propiedades locales.</p>
-            <p>Debug de la herramienta (noteFinder): {{ noteFinder | dump(1) }}</p>
+            {# Se ejecuta si la página no es una nota (e.g., Index, 404) #}
+            <p style="color: orange; font-weight: bold;">⚠️ Herramienta `noteFinder` no disponible en este contexto (Página de índice/404).</p>
         {% endif %}
     </div>
 </aside>
