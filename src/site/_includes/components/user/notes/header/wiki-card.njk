@@ -23,14 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Intentamos parsear frontmatter si el script existe
     const scriptTag = document.getElementById("user-note-frontmatter");
-    if(scriptTag) {
-        try {
-            const rawData = scriptTag.textContent.trim();
-            const frontmatter = JSON.parse(rawData);
-            console.log("frontmatter parseado:", frontmatter);
-        } catch(e) {
-            console.error("Error al parsear frontmatter:", e);
-        }
+    if(scriptTag){
+        const fm = JSON.parse(scriptTag.textContent);
+        console.log("Frontmatter detectado:", fm);
     } else {
         console.log("No se encontró #user-note-frontmatter");
     }
