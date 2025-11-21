@@ -1,45 +1,37 @@
 {# src/site/_includes/components/user/common/header/wiki-card.njk #}
-{% set noteData = noteFrontmatter %}
+
 {% set cardTitle = title or page.fileSlug or 'Nota sin título' %}
 
-<aside class="wiki-card-container" style="
-    float: right; 
-    width: 250px; 
-    margin: 0 0 1em 1em; 
-    border: 3px solid var(--accent-color, blue);
-    padding: 10px; 
-    background-color: var(--background-modifier-hover, #e0f7fa);
-    border-radius: 6px;
-    font-size: 0.9em;
-">
+{# 
+    CLAVE: Llama a la función buscadora, que usa el slug para encontrar la nota en las colecciones.
+#}
+{% set noteData = noteFinder.getFrontmatter(page.fileSlug) %}
+
+{% set displayedProperties = [] %}
+
+<aside class="wiki-card-container" style="/* ... estilos ... */">
     
     <div class="wiki-card-header">
-        <h3>✅ DEBUG: DATOS INYECTADOS</h3>
+        <h3>DEBUG: RESULTADO FINAL</h3>
     </div>
     
     <div class="wiki-card-content">
         <p>Título: **{{ cardTitle }}**</p>
         
         <hr>
-        <h4>DEBUG: Variables computadas</h4>
         
-        {% set rawData = userComputed.frontmatterRaw %}
-
-        {% if rawData and rawData.page %}
-            <p style="color: green; font-weight: bold;">✔ ACCESO EXITOSO a FRONTMATTER.</p>
-            <p>Valor de 'estado': 
-                <span style="background-color: yellow;">{{ rawData.estado or 'N/A' }}</span>
-            </p>
-            <p>Frontmatter Completo (RAW):</p>
-            <pre style="white-space: pre-wrap; font-size: 0.75em; background: #fff8e1; padding: 5px; border: 1px dashed #ccc;">
-                {{ rawData | dump(2) }}
-            </pre>
+        {% if noteData and noteData.estado %}
+            <p style="color: green; font-weight: bold;">🎉 ¡ÉXITO! FRONTMATTER ENCONTRADO.</p>
+            <p>Valor de 'estado': <span style="background-color: yellow;">{{ noteData.estado or 'N/A' }}</span></p>
+            <p>Propiedades relevantes:</p>
+            <table class="wiki-card-properties">
+                <tr><td>Estado:</td><td>{{ noteData.estado or 'N/A' }}</td></tr>
+                <tr><td>Tipo Contenido:</td><td>{{ noteData.tipo_contenido or 'N/A' }}</td></tr>
+            </table>
+            
         {% else %}
-            <p style="color: red; font-weight: bold;">❌ ERROR: La variable 'userComputed.frontmatterRaw' está vacía o inaccesible.</p>
-            <p>DEBUG COMPLETO DE userComputed:</p>
-            <pre style="white-space: pre-wrap; font-size: 0.75em; background: #ffeeee; padding: 5px; border: 1px dashed #ccc;">
-                {{ userComputed | dump(2) }}
-            </pre>
+            <p style="color: red; font-weight: bold;">❌ FALLO DEFINITIVO: La búsqueda no encontró las propiedades locales.</p>
+            <p>Debug de la herramienta (noteFinder): {{ noteFinder | dump(1) }}</p>
         {% endif %}
     </div>
 </aside>
