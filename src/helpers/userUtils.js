@@ -1,22 +1,24 @@
-// src/site/helpers/userUtils.js
+// src/site/helpers/userUtils.js (Versión para evitar la sobrescritura del plugin)
 
 function userComputed(data) {
-    const currentComputed = data.userComputed || {};
+    
+    // Devolvemos un objeto con una nueva clave de nivel superior
+    // Esta variable será accesible en Nunjucks como 'customDataTools'
+    return {
+        // Inyectamos la función buscadora en esta nueva clave
+        customDataTools: {
+            getNoteFrontmatter: (fileSlug) => {
+                // Accedemos a las colecciones a través de 'data' que tiene el contexto JS completo.
+                const allNotes = data.collections.all || []; 
+                
+                // Buscar la nota por el slug.
+                const note = allNotes.find(item => item.fileSlug === fileSlug);
 
-    // Inyectamos una FUNCIÓN que toma las colecciones y busca la nota.
-    // Esto es seguro porque la función se ejecuta DESPUÉS de la compilación.
-    currentComputed.getNoteFrontmatter = (fileSlug) => {
-        // La variable 'collections' está disponible aquí porque estamos en el contexto de Eleventy JS.
-        const allNotes = data.collections.all || []; 
-        
-        // Buscar la nota por el slug.
-        const note = allNotes.find(item => item.fileSlug === fileSlug);
-
-        // Devolver el Frontmatter completo de la nota si se encuentra.
-        return note ? note.data : null;
+                // Devolver el Frontmatter completo (note.data) si se encuentra.
+                return note ? note.data : null;
+            }
+        }
     };
-
-    return currentComputed;
 }
 
 exports.userComputed = userComputed;
