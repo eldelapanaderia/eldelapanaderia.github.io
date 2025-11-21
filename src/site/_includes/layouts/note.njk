@@ -74,7 +74,7 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       </div>
       {# --- SNIPPET PARA EXPONER FRONTMATTER --- #} 
       <script id="user-note-frontmatter" type="application/json">
-      {{ data | dump | safe }}
+      {{ eleventyComputed.userComputed | dump | safe }}
       </script>
 
 
