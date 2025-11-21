@@ -1,7 +1,8 @@
 ---
-{"dg-publish":true,"dg-permalink":"/W","permalink":"/W/","pinned":"true","tags":["arc"]}
+{"dg-publish":true,"dg-permalink":"/W","cssclasses":null,"test":"test","tags":["arc"],"dg-pinned":"true","permalink":"/W/","pinned":"true","dgPassFrontmatter":true}
 ---
 
+{% wikiCard %}
 Em dash  — (diálogos)  `Alt + -`  (`Alt + 0151`)  `--`→`—`
 Abrir Comillas latinas « (reflexiones, pensamientos o citar diálogos dentro de diálogos) `Ctrl + Alt + <` (`Alt + 174`) `<<`→`«`
 Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro de diálogos) `Ctrl + Alt + Shift + <` (`Alt + 175`) `>>`→`»`
