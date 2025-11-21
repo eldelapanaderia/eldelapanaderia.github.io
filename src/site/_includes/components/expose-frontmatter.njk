@@ -1,0 +1,14 @@
+{# src/site/_includes/components/user/common/expose-frontmatter.njk #}
+
+{% set dataToDump = {} %}
+{% set keysToIgnore = ['collections', 'eleventyComputed', 'page', 'pkg', 'siteconfig', 'dynamics', 'meta', 'eleventy', 'content', 'link', 'hideDataview', 'taggify', 'title', 'permalink', 'layout', 'tags'] %}
+
+{% for key, value in data %}
+  {% if key not in keysToIgnore %}
+    {% set dataToDump = dataToDump | merge({ (key): value }) %}
+  {% endif %}
+{% endfor %}
+
+<script id="user-note-frontmatter" type="application/json">
+{{ dataToDump | dump }}
+</script>
