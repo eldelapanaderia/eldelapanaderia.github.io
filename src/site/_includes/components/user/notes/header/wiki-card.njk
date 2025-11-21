@@ -1,0 +1,47 @@
+<div class="wiki-card-container">
+  <h3>Ficha de Propiedades</h3>
+  <div class="wiki-card-content" id="wiki-card-content">
+    <p>Cargando...</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const scriptTag = document.getElementById("user-note-frontmatter");
+  if (!scriptTag) return;
+
+  try {
+    const frontmatter = JSON.parse(scriptTag.textContent.trim());
+    const contentEl = document.getElementById("wiki-card-content");
+
+    const estado = frontmatter.estado || "N/A";
+    const tipoContenido = frontmatter.tipo_contenido || "N/A";
+    const test = frontmatter.test || "N/A";
+
+    contentEl.innerHTML = `
+      <p><strong>Estado:</strong> ${estado}</p>
+      <p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>
+      <p><strong>Test:</strong> ${test}</p>
+    `;
+  } catch(e) {
+    console.error("Error parseando frontmatter para wiki-card:", e);
+  }
+});
+</script>
+
+<style>
+.wiki-card-container {
+  display: flex;
+  flex-direction: column;
+  background: #fdf6e3;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  font-family: sans-serif;
+}
+.wiki-card-content p {
+  margin: 0.3rem 0;
+}
+</style>
