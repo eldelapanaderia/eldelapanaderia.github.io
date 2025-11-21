@@ -1,9 +1,12 @@
 function userComputed(data) {
-  const fm = data.note?.data || {};
+  // data es lo que Eleventy pasa al template
+  // intenta acceder a lo que tengas disponible (puede ser data.note, data.page, etc.)
+  const fm = data.note?.data || {}; // si note.data no existe, fm será {}
+  
   return {
-    estado: fm.estado,
-    tipo_contenido: fm.tipo_contenido,
-    test: fm.test
+    estado: fm.estado || "N/A",
+    tipo_contenido: fm.tipo_contenido || "N/A",
+    test: fm.test || "N/A"
   };
 }
 
