@@ -13,5 +13,6 @@
 {% endfor %}
 
 <script id="user-note-frontmatter" type="application/json">
-{{ dataToDump | dump }}
+{{ note.data | dump | safe }}
 </script>
+
