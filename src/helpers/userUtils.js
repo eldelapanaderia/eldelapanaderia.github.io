@@ -1,24 +1,21 @@
-// src/site/helpers/userUtils.js (Versión para evitar la sobrescritura del plugin)
+// src/site/helpers/userUtils.js (Sustituye a la anterior)
 
 function userComputed(data) {
+    const keysToIgnore = ['page', 'collections', 'eleventyComputed', 'userComputed', 'customDataTools'];
+    const safeFrontmatter = {};
     
-    // Devolvemos un objeto con una nueva clave de nivel superior
-    // Esta variable será accesible en Nunjucks como 'customDataTools'
-    return {
-        // Inyectamos la función buscadora en esta nueva clave
-        customDataTools: {
-            getNoteFrontmatter: (fileSlug) => {
-                // Accedemos a las colecciones a través de 'data' que tiene el contexto JS completo.
-                const allNotes = data.collections.all || []; 
-                
-                // Buscar la nota por el slug.
-                const note = allNotes.find(item => item.fileSlug === fileSlug);
-
-                // Devolver el Frontmatter completo (note.data) si se encuentra.
-                return note ? note.data : null;
-            }
+    // Copia todas las propiedades de data (incluyendo Frontmatter custom)
+    // EXCLUYENDO las referencias circulares de Eleventy.
+    for (const key in data) {
+        if (data.hasOwnProperty(key) && !keysToIgnore.includes(key)) {
+            safeFrontmatter[key] = data[key];
         }
+    }
+
+    // Retorna el objeto de Frontmatter limpio, en una clave simple.
+    return {
+        // Renombramos la clave a algo muy simple y único
+        noteFrontmatter: safeFrontmatter
     };
 }
-
 exports.userComputed = userComputed;
