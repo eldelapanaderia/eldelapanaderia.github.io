@@ -1,7 +1,0 @@
-{# src/site/_includes/components/user/notes/beforeContent/expose-frontmatter.njk #}
-
-{% set fm = note or {} %} {# note debería contener el frontmatter si "Let all frontmatter through" está ON #}
-
-<script id="user-note-frontmatter" type="application/json">
-{{ fm | dump | safe }}
-</script>
