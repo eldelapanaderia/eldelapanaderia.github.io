@@ -62,7 +62,16 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       {% endfor %}
       </header>
 
+      <div style="background:#ffdddd; padding:10px; border:1px solid red; margin-bottom:1rem;">
+      <strong>DEBUG note.data:</strong><br>
+      <pre>{{ note.data | dump | safe }}</pre>
       
+      <strong>DEBUG data:</strong><br>
+      <pre>{{ data | dump | safe }}</pre>
+      
+      <strong>DEBUG userComputed:</strong><br>
+      <pre>{{ userComputed | dump | safe }}</pre>
+      </div>
       {# --- SNIPPET PARA EXPONER FRONTMATTER --- #} 
       <script id="user-note-frontmatter" type="application/json"> 
         {{ note.data | dump | safe }} 
