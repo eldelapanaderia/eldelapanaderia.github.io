@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-permalink":"/W","cssclasses":null,"test":"test","tags":["arc"],"dg-pinned":"true","permalink":"/W/","pinned":"true","dgPassFrontmatter":true}
+{"dg-publish":true,"dg-permalink":"/W","cssclasses":null,"test":"test","tags":["arc"],"dg-pinned":"true","propiedad":"a ver si funciona","numero":1,"lista":["[[Ideas]]","[[Help]]"],"permalink":"/W/","pinned":"true","dgPassFrontmatter":true}
 ---
 
 Em dash  — (diálogos)  `Alt + -`  (`Alt + 0151`)  `--`→`—`
@@ -8,7 +8,7 @@ Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro d
 Tambien plugin smart typography que sustituye al escribir
 test
 
-<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr><tr><td>Test</td><td>test</td></tr><tr><td>Dg-pinned</td><td>true</td></tr></tbody></table></div>
+<div class="dataview table-view"><table><tbody><tr><td>Dg-publish</td><td>true</td></tr><tr><td>Dg-permalink</td><td>/W</td></tr><tr><td>Test</td><td>test</td></tr><tr><td>Dg-pinned</td><td>true</td></tr><tr><td>Propiedad</td><td>a ver si funciona</td></tr><tr><td>Numero</td><td>1</td></tr></tbody></table></div>
 
 
 
@@ -24,4 +24,10 @@ test
     </tr><tr>
         <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Dg-pinned</td>
         <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">true</td>
+    </tr><tr>
+        <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Propiedad</td>
+        <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">a ver si funciona</td>
+    </tr><tr>
+        <td style="text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;">Numero</td>
+        <td style="padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;">1</td>
     </tr></tbody></table></div><div style="clear: right;"><span></span></div>
