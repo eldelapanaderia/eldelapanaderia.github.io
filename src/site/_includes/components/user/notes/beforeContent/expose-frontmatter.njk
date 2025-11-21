@@ -12,7 +12,10 @@
   {% endif %}
 {% endfor %}
 
+{% set fm = renderData.note.data or {} %}
+
 <script id="user-note-frontmatter" type="application/json">
-{{ note.data | dump | safe }}
+{{ fm | dump | safe }}
 </script>
+
 
