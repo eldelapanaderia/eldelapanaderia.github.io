@@ -1,24 +1,21 @@
-function userComputed(data) {
-    // Claves de Eleventy que son grandes y causan la referencia circular.
-    const keysToIgnore = ['page', 'collections', 'eleventyComputed', 'userComputed'];
-    
-    // Objeto para almacenar solo las propiedades seguras del Frontmatter.
-    const safeFrontmatter = {};
-    
-    // Iteramos sobre todas las claves del objeto 'data' (Frontmatter + Eleventy)
-    for (const key in data) {
-        // Copiamos solo si la clave NO es una clave grande o peligrosa
-        if (data.hasOwnProperty(key) && !keysToIgnore.includes(key)) {
-            // Solo copiamos las claves que probablemente son Frontmatter custom
-            safeFrontmatter[key] = data[key];
-        }
-    }
+// src/site/helpers/userUtils.js
 
+function userComputed(data) {
     const currentComputed = data.userComputed || {};
-    
-    // Inyectamos el objeto LIMPIO, sin referencias circulares.
-    currentComputed.frontmatterRaw = safeFrontmatter; 
-    
+
+    // Inyectamos una FUNCIÓN que toma las colecciones y busca la nota.
+    // Esto es seguro porque la función se ejecuta DESPUÉS de la compilación.
+    currentComputed.getNoteFrontmatter = (fileSlug) => {
+        // La variable 'collections' está disponible aquí porque estamos en el contexto de Eleventy JS.
+        const allNotes = data.collections.all || []; 
+        
+        // Buscar la nota por el slug.
+        const note = allNotes.find(item => item.fileSlug === fileSlug);
+
+        // Devolver el Frontmatter completo de la nota si se encuentra.
+        return note ? note.data : null;
+    };
+
     return currentComputed;
 }
 
