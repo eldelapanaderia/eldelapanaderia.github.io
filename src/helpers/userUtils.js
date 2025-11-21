@@ -1,8 +1,7 @@
 function userComputed(data) {
-  // data.note.data contiene las propiedades frontmatter de la nota actual
-  const noteData = data.note?.data || {};
-
+  // Las propiedades de frontmatter de la nota están al nivel de "data"
   const reservedKeys = [
+    "siteconfig", "dynamics", "eleventyComputed", "meta", "templateEngineOverride",
     "page", "collections", "tags", "layout",
     "eleventyExcludeFromCollections",
     "permalink", "content", "templateContent",
@@ -10,11 +9,12 @@ function userComputed(data) {
   ];
 
   const fm = {};
-  for (const key in noteData) {
+  for (const key in data) {
     if (!reservedKeys.includes(key)) {
-      fm[key] = noteData[key];
+      fm[key] = data[key];
     }
   }
+
   return fm;
 }
 
