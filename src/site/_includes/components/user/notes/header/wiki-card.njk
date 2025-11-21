@@ -1,48 +1,36 @@
-{# src/site/_includes/components/user/notes/header/wiki-card.njk #}
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const scriptTag = document.getElementById("user-note-frontmatter");
     
-    // Solo intentar renderizar si la etiqueta de datos existe (solo en páginas de nota)
     if (scriptTag) {
         try {
             const rawData = scriptTag.textContent.trim();
             const frontmatter = JSON.parse(rawData);
+
+            const estado = frontmatter.estado || null;
+            const tipoContenido = frontmatter.tipo_contenido || null;
             
-            // --- INICIO DE LÓGICA DE RENDERIZADO ---
-            
-            // 1. Obtener tus propiedades custom
-            const estado = frontmatter.estado || 'N/A';
-            const tipoContenido = frontmatter.tipo_contenido || 'N/A';
-            
-            if (estado === 'N/A' && tipoContenido === 'N/A') {
-                return; // No hay propiedades custom para mostrar
-            }
-            
+            if (!estado && !tipoContenido) return;
+
             const cardHtml = `
                 <aside class="wiki-card-container">
                     <div class="wiki-card-header">
                         <h3>Ficha de Propiedades</h3>
                     </div>
                     <div class="wiki-card-content">
-                        <p><strong>Estado:</strong> ${estado}</p>
-                        <p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>
+                        ${estado ? `<p><strong>Estado:</strong> ${estado}</p>` : ""}
+                        ${tipoContenido ? `<p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>` : ""}
                     </div>
                 </aside>
             `;
             
-            // 2. Insertar la ficha en el DOM
             const header = document.querySelector('header');
             if (header) {
-                // Insertar la ficha al final del elemento <header>
                 header.insertAdjacentHTML('beforeend', cardHtml);
             }
-            
-            // --- FIN DE LÓGICA DE RENDERIZADO ---
 
         } catch (e) {
-            console.error("Error al parsear el Frontmatter JSON:", e);
+            console.error("Error al parsear el frontmatter expuesto por expose-frontmatter.njk:", e);
         }
     }
 });
