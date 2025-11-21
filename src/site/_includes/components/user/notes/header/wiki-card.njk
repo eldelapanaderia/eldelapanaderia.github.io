@@ -6,22 +6,9 @@
 </div>
 
 <script>
-const frontmatter = {{ userFrontmatter | dump | safe }};
-console.log("FRONTMATTER RECIBIDO:", frontmatter);
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Recuperamos el slug de la nota actual
-  const slug = "{{ page.fileSlug }}";
-
-  // Obtenemos los frontmatter de todas las notas del data file global
-  const notes = {{ notesFrontmatter | dump | safe }};
-
-  const frontmatter = notes[slug] || {};
+  const frontmatter = {{ userFrontmatter | dump | safe }};
   console.log("FRONTMATTER RECIBIDO:", frontmatter);
-  console.log("CLAVES:", Object.keys(frontmatter));
-
+  
   const contentEl = document.getElementById("wiki-card-content");
   contentEl.innerHTML = ""; // Limpiar contenido inicial
 
@@ -36,26 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
       displayValue = value ?? "N/A";
     }
 
-    contentEl.innerHTML += `
-      <p><strong>${key}:</strong> ${displayValue}</p>
-    `;
+    contentEl.innerHTML += `<p><strong>${key}:</strong> ${displayValue}</p>`;
   }
-});
 </script>
-
-<style>
-.wiki-card-container {
-  display: flex;
-  flex-direction: column;
-  background: #fdf6e3;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  max-width: 400px;
-  font-family: sans-serif;
-}
-.wiki-card-content p {
-  margin: 0.3rem 0;
-}
-</style>
