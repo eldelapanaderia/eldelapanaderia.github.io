@@ -1,5 +1,5 @@
 {# src/site/_includes/components/user/common/header/wiki-card.njk #}
-
+{% set noteData = noteFrontmatter %}
 {% set cardTitle = title or page.fileSlug or 'Nota sin título' %}
 
 <aside class="wiki-card-container" style="
