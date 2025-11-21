@@ -1,25 +1,9 @@
-// src/site/helpers/userUtils.js
-
 function userComputed(data) {
-    return {};
+  return {
+    estado: data.estado,
+    tipo_contenido: data.tipo_contenido,
+    test: data.test
+  };
 }
 
-function userEleventySetup(eleventyConfig) {}
-
 exports.userComputed = userComputed;
-exports.userEleventySetup = userEleventySetup;
-
-exports.dynamics = {
-    common: {
-        head: [
-            "components/user/common/head/expose-frontmatter-global.njk"
-        ],
-        beforeContent: [],
-        afterContent: []
-    },
-    notes: {
-        head: [],
-        beforeContent: [],
-        afterContent: []
-    }
-};
