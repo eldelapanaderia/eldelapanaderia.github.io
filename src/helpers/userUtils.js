@@ -1,24 +1,20 @@
 function userComputed(data) {
-  // Si existe data.page.fileSlug, entonces estamos en una nota real.
-  // Y sus datos propios están en "data" PERO tenemos que excluir
-  // todo lo que Eleventy añade por defecto.
+  // data.note.data contiene las propiedades frontmatter de la nota actual
+  const noteData = data.note?.data || {};
 
   const reservedKeys = [
     "page", "collections", "tags", "layout",
     "eleventyExcludeFromCollections",
     "permalink", "content", "templateContent",
-    "template", "date", "updated", "created",
-    "graph", "filetree", "userComputed"
+    "template", "date", "updated", "created", "graph", "filetree", "userComputed"
   ];
 
   const fm = {};
-
-  for (const key in data) {
+  for (const key in noteData) {
     if (!reservedKeys.includes(key)) {
-      fm[key] = data[key];
+      fm[key] = noteData[key];
     }
   }
-
   return fm;
 }
 
