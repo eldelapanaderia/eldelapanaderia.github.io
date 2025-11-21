@@ -7,34 +7,25 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const scriptTag = document.getElementById("user-note-frontmatter");
-  if (!scriptTag) return;
+  // Recuperamos el slug de la nota actual
+  const slug = "{{ page.fileSlug }}";
 
-  let frontmatter = {};
-  try {
-    frontmatter = JSON.parse(scriptTag.textContent.trim());
-    console.log("FRONTMATTER RECIBIDO:", frontmatter);
-    console.log("CLAVES:", Object.keys(frontmatter));
-  } catch (e) {
-    console.error("Error parseando frontmatter:", e);
-  }
+  // Obtenemos los frontmatter de todas las notas del data file global
+  const notes = {{ notesFrontmatter | dump | safe }};
+
+  const frontmatter = notes[slug] || {};
+  console.log("FRONTMATTER RECIBIDO:", frontmatter);
+  console.log("CLAVES:", Object.keys(frontmatter));
 
   const contentEl = document.getElementById("wiki-card-content");
-  contentEl.innerHTML = ""; // limpiar
-
-  // Opcional: claves a ignorar (las internas de Digital Garden)
-  const ignoreKeys = ["dg-publish", "dg-permalink", "cssclasses", "dg-pinned", "tags"];
+  contentEl.innerHTML = ""; // Limpiar contenido inicial
 
   for (const [key, value] of Object.entries(frontmatter)) {
-    if (ignoreKeys.includes(key)) continue;
-
     let displayValue = "";
 
     if (Array.isArray(value)) {
-      // lista
       displayValue = value.join(", ");
     } else if (typeof value === "object" && value !== null) {
-      // objeto (muy raro en frontmatter)
       displayValue = JSON.stringify(value);
     } else {
       displayValue = value ?? "N/A";
