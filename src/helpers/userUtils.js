@@ -1,3 +1,4 @@
+console.log("========== userComputed SE ESTÁ EJECUTANDO ==========");
 function userComputed(data) {
   // data es lo que Eleventy pasa al template
   // intenta acceder a lo que tengas disponible (puede ser data.note, data.page, etc.)
