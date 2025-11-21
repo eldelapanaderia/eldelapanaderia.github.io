@@ -1,39 +1,49 @@
 {# src/site/_includes/components/user/common/header/wiki-card.njk #}
 
-{% set cardTitle = title or page.fileSlug or 'Nota sin título' %}
-
-{# MODIFICACIÓN CLAVE: Comprobación de existencia doble antes de llamar #}
-{% set noteData = null %}
-
-{% if noteFinder and noteFinder.getFrontmatter %}
-    {% set noteData = noteFinder.getFrontmatter(page.fileSlug) %}
-{% endif %}
-
-{% set displayedProperties = [] %}
-
-<aside class="wiki-card-container" style="/* ... estilos ... */">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scriptTag = document.getElementById("user-note-frontmatter");
     
-    <div class="wiki-card-header">
-        <h3>DEBUG: RESULTADO FINAL</h3>
-    </div>
-    
-    <div class="wiki-card-content">
-        <p>Título: **{{ cardTitle }}**</p>
-        
-        <hr>
-        
-        {% if noteFinder and noteFinder.getFrontmatter %}
-            {# Ejecución solo si la herramienta existe #}
-            {% if noteData and noteData.estado %}
-                <p style="color: green; font-weight: bold;">🎉 ¡ÉXITO! FRONTMATTER ENCONTRADO.</p>
-                {# ... el resto de tu lógica de visualización ... #}
-                
-            {% else %}
-                <p style="color: red; font-weight: bold;">❌ FALLO EN LA BÚSQUEDA: Propiedades no encontradas.</p>
-            {% endif %}
-        {% else %}
-            {# Se ejecuta si la página no es una nota (e.g., Index, 404) #}
-            <p style="color: orange; font-weight: bold;">⚠️ Herramienta `noteFinder` no disponible en este contexto (Página de índice/404).</p>
-        {% endif %}
-    </div>
-</aside>
+    // Solo intentar renderizar si la etiqueta de datos existe (solo en páginas de nota)
+    if (scriptTag) {
+        try {
+            const rawData = scriptTag.textContent.trim();
+            const frontmatter = JSON.parse(rawData);
+            
+            // --- INICIO DE LÓGICA DE RENDERIZADO ---
+            
+            // 1. Obtener tus propiedades custom
+            const estado = frontmatter.estado || 'N/A';
+            const tipoContenido = frontmatter.tipo_contenido || 'N/A';
+            
+            if (estado === 'N/A' && tipoContenido === 'N/A') {
+                return; // No hay propiedades custom para mostrar
+            }
+            
+            const cardHtml = `
+                <aside class="wiki-card-container">
+                    <div class="wiki-card-header">
+                        <h3>Ficha de Propiedades</h3>
+                    </div>
+                    <div class="wiki-card-content">
+                        <p><strong>Estado:</strong> ${estado}</p>
+                        <p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>
+                    </div>
+                </aside>
+            `;
+            
+            // 2. Insertar la ficha en el DOM
+            const header = document.querySelector('header');
+            if (header) {
+                // Insertar la ficha al final del elemento <header>
+                header.insertAdjacentHTML('beforeend', cardHtml);
+            }
+            
+            // --- FIN DE LÓGICA DE RENDERIZADO ---
+
+        } catch (e) {
+            console.error("Error al parsear el Frontmatter JSON:", e);
+        }
+    }
+});
+</script>
