@@ -1,41 +1,38 @@
-<div style="background:red">HEADER slot activo</div>
-<pre style="background:#222;color:#0f0;padding:1rem;">
+<div style="background:red;padding:0.5rem;color:#fff;">HEADER slot activo</div>
+
+<h4 style="margin-top:1rem;">DEBUG DE VARIABLES DISPONIBLES</h4>
+<pre style="background:#222;color:#0f0;padding:1rem;overflow:auto;">
+<b>renderData:</b>
 {{ renderData | dump }}
 </pre>
+
+<pre style="background:#222;color:#ff0;padding:1rem;overflow:auto;">
+<b>note:</b>
+{{ note | dump }}
+</pre>
+
+<pre style="background:#222;color:#0ff;padding:1rem;overflow:auto;">
+<b>page:</b>
+{{ page | dump }}
+</pre>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DEBUG FRONTMATTER");
+    console.log("script tag:", document.getElementById("user-note-frontmatter"));
+
+    // Intentamos parsear frontmatter si el script existe
     const scriptTag = document.getElementById("user-note-frontmatter");
-    
-    if (scriptTag) {
+    if(scriptTag) {
         try {
             const rawData = scriptTag.textContent.trim();
             const frontmatter = JSON.parse(rawData);
-
-            const estado = frontmatter.estado || null;
-            const tipoContenido = frontmatter.tipo_contenido || null;
-            
-            if (!estado && !tipoContenido) return;
-
-            const cardHtml = `
-                <aside class="wiki-card-container">
-                    <div class="wiki-card-header">
-                        <h3>Ficha de Propiedades</h3>
-                    </div>
-                    <div class="wiki-card-content">
-                        ${estado ? `<p><strong>Estado:</strong> ${estado}</p>` : ""}
-                        ${tipoContenido ? `<p><strong>Tipo Contenido:</strong> ${tipoContenido}</p>` : ""}
-                    </div>
-                </aside>
-            `;
-            
-            const header = document.querySelector('header');
-            if (header) {
-                header.insertAdjacentHTML('beforeend', cardHtml);
-            }
-
-        } catch (e) {
-            console.error("Error al parsear el frontmatter expuesto por expose-frontmatter.njk:", e);
+            console.log("frontmatter parseado:", frontmatter);
+        } catch(e) {
+            console.error("Error al parsear frontmatter:", e);
         }
+    } else {
+        console.log("No se encontró #user-note-frontmatter");
     }
 });
 </script>
