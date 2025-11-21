@@ -74,9 +74,11 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       </div>
 
       {# --- SNIPPET PARA EXPONER FRONTMATTER --- #} 
+      {% set fm = eleventyComputed.userComputed %}
       <script id="user-note-frontmatter" type="application/json">
-      {{ note.data | dump | safe }}
+      {{ fm | dump | safe }}
       </script>
+
 
       {% for imp in dynamics.common.beforeContent %}
         {% include imp %}
