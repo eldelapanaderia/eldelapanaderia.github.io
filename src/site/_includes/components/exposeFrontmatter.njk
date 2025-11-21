@@ -1,0 +1,15 @@
+{# components/exposeFrontmatter.njk #}
+{# Usamos 'data' en lugar de 'page.data' ya que contiene el Frontmatter y metadatos #}
+
+{% set dataToDump = {} %}
+{# Excluimos las claves conocidas por causar referencias circulares o ser demasiado grandes #}
+{% set keysToIgnore = ['collections', 'eleventyComputed', 'page', 'pkg', 'siteconfig', 'dynamics', 'meta', 'eleventy', 'content'] %}
+
+{% for key, value in data %}
+  {% if key not in keysToIgnore %}
+    {% set dataToDump = dataToDump | merge({ (key): value }) %}
+  {% endif %}
+{% endfor %}
+
+<script id="frontmatter-data" type="application/json">
+{{ dataToDump | dump }}</script>
