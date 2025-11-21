@@ -61,6 +61,14 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
         {% include imp %}
       {% endfor %}
       </header>
+
+      
+      {# --- SNIPPET PARA EXPONER FRONTMATTER --- #} 
+      <script id="user-note-frontmatter" type="application/json"> 
+        {{ note.data | dump | safe }} 
+      </script>
+
+
       {% for imp in dynamics.common.beforeContent %}
         {% include imp %}
       {% endfor %}
