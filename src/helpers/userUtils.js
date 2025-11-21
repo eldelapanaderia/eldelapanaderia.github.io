@@ -12,7 +12,7 @@ exports.userEleventySetup = userEleventySetup;
 exports.dynamics = {
     common: {
         head: [
-            "components/expose-frontmatter-global.njk"
+            "components/user/common/head/expose-frontmatter-global.njk"
         ],
         beforeContent: [],
         afterContent: []
