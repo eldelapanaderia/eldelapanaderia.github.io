@@ -1,7 +1,9 @@
 // Put your computations here.
 
 function userComputed(data) {
-  return {};
+  const currentComputed = data.userComputed || {};
+  currentComputed.frontmatterRaw = data; 
+  return currentComputed;
 }
 
 exports.userComputed = userComputed;
