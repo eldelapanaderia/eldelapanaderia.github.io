@@ -1,0 +1,11 @@
+{% set fm = note.data or {} %}
+
+<script id="user-note-frontmatter" type="application/json">
+{{ fm | dump | safe }}
+</script>
+
+<div class="wiki-card">
+  <h3>Ficha de Propiedades</h3>
+  <p><strong>Estado:</strong> {{ fm.estado | default("N/A") }}</p>
+  <p><strong>Tipo Contenido:</strong> {{ fm.tipo_contenido | default("N/A") }}</p>
+</div>
