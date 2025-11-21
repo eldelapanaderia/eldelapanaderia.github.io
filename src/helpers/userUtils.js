@@ -1,12 +1,25 @@
 // src/site/helpers/userUtils.js
 
 function userComputed(data) {
-  return {};
+    return {};
 }
 
-function userEleventySetup(eleventyConfig) {
-  // Aquí puedes añadir shortcodes personalizados si los usas.
-}
+function userEleventySetup(eleventyConfig) {}
 
 exports.userComputed = userComputed;
 exports.userEleventySetup = userEleventySetup;
+
+exports.dynamics = {
+    common: {
+        head: [
+            "components/expose-frontmatter-global.njk"
+        ],
+        beforeContent: [],
+        afterContent: []
+    },
+    notes: {
+        head: [],
+        beforeContent: [],
+        afterContent: []
+    }
+};
