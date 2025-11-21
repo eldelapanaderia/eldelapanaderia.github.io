@@ -73,8 +73,8 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       <pre>{{ userComputed | dump | safe }}</pre>
       </div>
       {# --- SNIPPET PARA EXPONER FRONTMATTER --- #} 
-      <script id="user-note-frontmatter" type="application/json"> 
-        {{ note.data | dump | safe }} 
+      <script id="user-note-frontmatter" type="application/json">
+      {{ data | dump | safe }}
       </script>
 
 
