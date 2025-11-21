@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let frontmatter = {};
   try {
     frontmatter = JSON.parse(scriptTag.textContent.trim());
+    console.log("FRONTMATTER RECIBIDO:", frontmatter);
+    console.log("CLAVES:", Object.keys(frontmatter));
   } catch (e) {
     console.error("Error parseando frontmatter:", e);
   }
