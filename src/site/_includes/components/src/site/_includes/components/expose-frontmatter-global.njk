@@ -1,0 +1,7 @@
+// src/site/_includes/components/expose-frontmatter-global.njk
+
+{% set fm = note.data or data or {} %}
+
+<script id="user-note-frontmatter" type="application/json">
+{{ fm | dump | safe }}
+</script>
