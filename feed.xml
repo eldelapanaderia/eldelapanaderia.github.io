@@ -3,14 +3,14 @@
     <title>Firmamento</title>
     <link href="https://eldelapanaderia.github.io/feed.xml" rel="self" />
     <link href="https://eldelapanaderia.github.io" />
-    <updated>2025-11-21T15:55:34Z</updated>
+    <updated>2025-11-21T15:58:33Z</updated>
     <id>https://eldelapanaderia.github.io</id>
         <entry>
             <title>
                 Writing Hotkeys
                 
             </title>
-            <updated>2025-11-21T15:55:25Z</updated>
+            <updated>2025-11-21T15:58:23Z</updated>
             <id>https://eldelapanaderia.github.io/W/</id>
             <content type="html">
                 &lt;p&gt;Em dash  — (diálogos)  &lt;code&gt;Alt + -&lt;/code&gt;  (&lt;code&gt;Alt + 0151&lt;/code&gt;)  &lt;code&gt;--&lt;/code&gt;→&lt;code&gt;—&lt;/code&gt;&lt;br /&gt;
@@ -18,7 +18,7 @@ Abrir Comillas latinas « (reflexiones, pensamientos o citar diálogos dentro de
 Cerrar Comillas latinas » (reflexiones, pensamientos o citar diálogos dentro de diálogos) &lt;code&gt;Ctrl + Alt + Shift + &amp;lt;&lt;/code&gt; (&lt;code&gt;Alt + 175&lt;/code&gt;) &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;→&lt;code&gt;»&lt;/code&gt;&lt;br /&gt;
 Tambien plugin smart typography que sustituye al escribir&lt;br /&gt;
 test&lt;/p&gt;
-&lt;div class=&quot;dataview table-view&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Dg-publish&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-permalink&lt;/td&gt;&lt;td&gt;/W&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Test&lt;/td&gt;&lt;td&gt;test&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-pinned&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;div class=&quot;dataview table-view&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Dg-publish&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-permalink&lt;/td&gt;&lt;td&gt;/W&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Test&lt;/td&gt;&lt;td&gt;test&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dg-pinned&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Propiedad&lt;/td&gt;&lt;td&gt;a ver si funciona&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Numero&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
 &lt;div style=&quot;float: right; width: 300px; padding: 0; margin: 0 0 1em 20px; border: 1px solid #ccc; border-radius: 5px; overflow: hidden; clear: both; font-size: 0.9em;&quot;&gt;&lt;div style=&quot;background-color: #337ab7; color: white; font-weight: bold; text-align: center; padding: 8px;&quot;&gt;Metadatos de la Nota&lt;/div&gt;&lt;table style=&quot;width: 100%; border-collapse: collapse; margin: 0;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;
         &lt;td style=&quot;text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;&quot;&gt;Dg-publish&lt;/td&gt;
         &lt;td style=&quot;padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;&quot;&gt;true&lt;/td&gt;
@@ -31,6 +31,12 @@ test&lt;/p&gt;
     &lt;/tr&gt;&lt;tr&gt;
         &lt;td style=&quot;text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;&quot;&gt;Dg-pinned&lt;/td&gt;
         &lt;td style=&quot;padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;&quot;&gt;true&lt;/td&gt;
+    &lt;/tr&gt;&lt;tr&gt;
+        &lt;td style=&quot;text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;&quot;&gt;Propiedad&lt;/td&gt;
+        &lt;td style=&quot;padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;&quot;&gt;a ver si funciona&lt;/td&gt;
+    &lt;/tr&gt;&lt;tr&gt;
+        &lt;td style=&quot;text-align: left; width: 40%; font-weight: 500; padding: 5px 10px; border-bottom: 1px solid #eee;&quot;&gt;Numero&lt;/td&gt;
+        &lt;td style=&quot;padding: 5px 10px; border-bottom: 1px solid #eee; vertical-align: top;&quot;&gt;1&lt;/td&gt;
     &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div style=&quot;clear: right;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
 
             </content>
@@ -41,7 +47,7 @@ test&lt;/p&gt;
                 Ideas
                 
             </title>
-            <updated>2025-11-21T15:55:25Z</updated>
+            <updated>2025-11-21T15:58:23Z</updated>
             <id>https://eldelapanaderia.github.io/Worlds/Firmamento/Ideas/</id>
             <content type="html">
                 &lt;h1 id=&quot;em-protagonista-em&quot; tabindex=&quot;-1&quot;&gt;&lt;em&gt;Protagonista&lt;/em&gt;&lt;/h1&gt;
@@ -734,7 +740,7 @@ Habra que ver como &amp;quot;recordar&amp;quot; estas formas/flujos porque realm
                 Help
                 
             </title>
-            <updated>2025-11-21T15:55:25Z</updated>
+            <updated>2025-11-21T15:58:23Z</updated>
             <id>https://eldelapanaderia.github.io/</id>
             <content type="html">
                 &lt;blockquote&gt;
