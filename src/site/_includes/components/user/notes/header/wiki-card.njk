@@ -6,6 +6,11 @@
 </div>
 
 <script>
+const frontmatter = {{ userFrontmatter | dump | safe }};
+console.log("FRONTMATTER RECIBIDO:", frontmatter);
+</script>
+
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   // Recuperamos el slug de la nota actual
   const slug = "{{ page.fileSlug }}";
